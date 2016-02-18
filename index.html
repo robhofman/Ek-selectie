@@ -9,7 +9,7 @@
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
     <h2 ng-bind="aantalSpelers"></h2>
-    <form action="">
+    <form action="PHP/post.php" method="post">
         <ul>
             <li class="speler"><input type="checkbox" name="speler1" value="speler1">speler 1</li>
             <li class="speler"><input type="checkbox" name="speler2" value="speler2">speler 2</li>
