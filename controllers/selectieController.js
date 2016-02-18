@@ -4,7 +4,7 @@
 (function () {
     "use strict";
     var selectieController = function($scope) {
-
+            //this is the controller
         $scope.aantalSpelers = 0;
         $scope.alleSpelers = [];
         $scope.aantalIsNietVoldoende = true;
