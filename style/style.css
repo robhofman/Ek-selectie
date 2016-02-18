@@ -1,0 +1,46 @@
+form{
+    width: 670px;
+}
+
+input[type='checkbox'] {
+    visibility: hidden;
+}
+main{
+    width: 670px;
+}
+
+ul{
+    height: 500px;
+    overflow: scroll;
+    background-color: red;
+}
+
+.hidden{
+    display: none;
+}
+
+li{
+    width: 90px;
+    height: 100px;
+    display: inline-block;
+    margin: 5px;
+    background-color: green;
+}
+
+#trein{
+    width: 630px;
+    margin: 20px;
+    height: 50px;
+    background-color: orange;
+}
+
+.driveAway{
+    -webkit-transition: -webkit-transform 2s ease-in;
+    -webkit-transform:translate(-750px,0px);
+
+}
+
+.checked{
+    border: 3px solid yellow;
+    margin: 2px;
+}

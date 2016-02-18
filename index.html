@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Wie gaat mee naar Frankrijk</title>
+</head>
+<body>
+<main id="gameSpace" ng-controller="selectieController">
+    <!--selecteer spelers-->
+    <h2 ng-bind="aantalSpelers"></h2>
+    <form action="">
+        <ul>
+            <li class="speler"><input type="checkbox" value="speler 1">speler 1</li>
+            <li class="speler"><input type="checkbox" value="speler 2">speler 2</li>
+            <li class="speler"><input type="checkbox" value="speler 3">speler 3</li>
+            <li class="speler"><input type="checkbox" value="speler 4">speler 4</li>
+            <li class="speler"><input type="checkbox" value="speler 5">speler 5</li>
+            <li class="speler"><input type="checkbox" value="speler 6">speler 6</li>
+            <li class="speler"><input type="checkbox" value="speler 7">speler 7</li>
+            <li class="speler"><input type="checkbox" value="speler 8">speler 8</li>
+            <li class="speler"><input type="checkbox" value="speler 9">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 10">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 11">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 12">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 13">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 14">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 15">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 16">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 17">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 18">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 19">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 20">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 21">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 23">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 24">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 25">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 26">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 27">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 28">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 29">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 30">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 31">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 32">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 33">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 34">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 35">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 36">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 37">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 38">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 39">speler</li>
+            <li class="speler"><input type="checkbox" value="speler 40">speler</li>
+        </ul>
+        <input type="submit" id="btnBekijkTeam" value="Bekijk je selectie">
+        <input type="submit" id="btnWijzig" value="wijzig je team" class="hidden">
+        <input type="submit" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" class="hidden">
+
+    </form>
+    <div id="trein"></div>
+
+</main>
+
+</body>
+
+<script src="lib/jquery-1.12.0.js"></script>
+
+<script src="lib/angular.js"></script>
+<script src="app.js"></script>
+<script src="controllers/selectieController.js"></script>
+<!--
+<script src="js/selectPlayers.js"></script>
+-->
+
+</html>
