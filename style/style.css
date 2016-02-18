@@ -3,7 +3,7 @@ form{
 }
 
 input[type='checkbox'] {
-    visibility: hidden;
+    display: none;
 }
 main{
     width: 670px;
@@ -20,8 +20,8 @@ ul{
 }
 
 li{
-    width: 90px;
-    height: 100px;
+    width: 130px;
+    height: 220px;
     display: inline-block;
     margin: 5px;
     background-color: green;
