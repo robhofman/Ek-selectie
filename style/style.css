@@ -21,10 +21,14 @@ ul{
 }
 
 li{
-    width: 130px;
-    height: 220px;
+    width: 60px;
+    /**height: 220px;*/
     display: inline-block;
     margin: 5px;
+}
+
+li>img{
+    width: 60px;
 }
 
 #trein{
@@ -37,7 +41,7 @@ li{
     height: 500px;
     width: 670px;
     position: absolute;
-    margin-top: 700px;
+    margin-top: 70px;
 }
 
 .driveAway{

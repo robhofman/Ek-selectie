@@ -74,6 +74,7 @@
 
         var bewaar = function(e){
             e.preventDefault();
+            luikVallen();
             var allListItems = $('.speler');
             var selectie = [];
             var lengte = allListItems.length;
@@ -96,6 +97,11 @@
                 $("#trein").addClass('driveAway')
 
             }
+        };
+
+        var luikVallen = function () {
+            $("#canvasLuik").removeClass("hidden");
+
         };
 
         var wijzig = function(e){
