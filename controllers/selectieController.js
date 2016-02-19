@@ -3,11 +3,16 @@
  */
 (function () {
     "use strict";
-    var selectieController = function($scope) {
+    var selectieController = function($scope, ngDialog) {
             //this is the controller
         $scope.aantalSpelers = 0;
         $scope.alleSpelers = [];
         $scope.aantalIsNietVoldoende = true;
+
+
+        $scope.clickToOpen = function () {
+            ngDialog.open({ template: 'popupTmpl.html' });
+        };
 
         var getAllPlayers = function(){
             var main = document.getElementById("gameSpace");
@@ -145,6 +150,6 @@
     };
 
 
-    angular.module("app").controller("selectieController", ["$scope", selectieController]);
+    angular.module("app").controller("selectieController", ["$scope", "ngDialog", selectieController]);
 
 })();

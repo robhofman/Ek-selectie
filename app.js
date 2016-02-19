@@ -2,6 +2,6 @@
     "use strict";
 
     // Maak Angular app aan
-    var app = angular.module("app", []);
+    var app = angular.module("app", ['ngDialog']);
 
 })();

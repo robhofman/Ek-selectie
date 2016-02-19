@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="node_modules/ng-dialog/css/ngDialog.css">
+    <link rel="stylesheet" href="node_modules/ng-dialog/css/ngDialog-theme-default.css">
+
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <title>Wie gaat mee naar Frankrijk</title>
 </head>
@@ -130,6 +133,7 @@
         <input type="submit" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" class="hidden">
 
     </form>
+    <a href="#" ng-click="clickToOpen()">test pop-up</a>
     <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">
 
 </main>
@@ -139,6 +143,8 @@
 <script src="lib/jquery-1.12.0.js"></script>
 
 <script src="lib/angular.js"></script>
+<script src="node_modules/ng-dialog/js/ngDialog.js"></script>
+
 <script src="app.js"></script>
 <script src="controllers/selectieController.js"></script>
 <!--
