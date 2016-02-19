@@ -139,7 +139,12 @@
             console.log(imgTrein.y);
             if(imgTrein.y > 500){
                 clearInterval(interValID);
+                bounce();
             }
+        };
+
+        var bounce = function () {
+
         };
 
         var wijzig = function(e){
