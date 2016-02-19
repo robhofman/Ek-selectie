@@ -108,9 +108,38 @@
             }
         };
 
+        var ctx;
+        var imgTrein;
+        var interValID;
         var luikVallen = function () {
-            $("#canvasLuik").removeClass("hidden");
+            var c = document.getElementById("canvasLuik");
+            $(c).removeClass("hidden");
 
+            ctx = c.getContext("2d");
+
+
+            var vallendeTrein = new Object();
+            vallendeTrein["image"] = new Image();
+            vallendeTrein.image.src = "img/Trein_Red_Devils.png";
+            vallendeTrein["y"] = 0;
+            imgTrein = vallendeTrein;
+            interValID = setInterval(draw, 3);
+
+
+
+        };
+
+        var draw = function () {
+            ctx.beginPath();
+            ctx.rect(0,0,670,imgTrein.y);
+            ctx.fillStyle = "#066862";
+            ctx.fill();
+            ctx.drawImage(imgTrein.image, 120,imgTrein.y-imgTrein.image.height);
+            imgTrein.y += 5;
+            console.log(imgTrein.y);
+            if(imgTrein.y > 500){
+                clearInterval(interValID);
+            }
         };
 
         var wijzig = function(e){
@@ -148,7 +177,6 @@
         getAllPlayers();
         init();
         $scope.bewaar = bewaar;
-
 
 
 
