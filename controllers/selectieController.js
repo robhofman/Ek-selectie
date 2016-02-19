@@ -5,13 +5,16 @@
     "use strict";
     var selectieController = function($scope, ngDialog) {
             //this is the controller
-        $scope.aantalSpelers = 0;
+        $scope.aantalSpelers = 23;
         $scope.alleSpelers = [];
         $scope.aantalIsNietVoldoende = true;
 
 
         $scope.clickToOpen = function () {
-            ngDialog.open({ template: 'popupTmpl.html' });
+            ngDialog.open({
+                template: 'externalTemplate.html',
+                scope: $scope
+            });
         };
 
         var getAllPlayers = function(){
@@ -22,7 +25,7 @@
 
 
         var checkAantalSpelers = function(){
-            if($scope.aantalSpelers == 23){
+            if($scope.aantalSpelers == 0){
                 $scope.$apply(function(){
                     $scope.aantalIsNietVoldoende = false;
 
@@ -44,7 +47,7 @@
                 this.firstChild.checked = false;
                 $(this).removeClass('checked');
                 $scope.$apply(function (){
-                        $scope.aantalSpelers = $scope.aantalSpelers - 1;
+                        $scope.aantalSpelers = $scope.aantalSpelers + 1;
 
                     });
 
@@ -53,7 +56,7 @@
                 this.firstChild.checked = true;
                 $(this).addClass("checked");
                 $scope.$apply(function(){
-                    $scope.aantalSpelers = $scope.aantalSpelers + 1;
+                    $scope.aantalSpelers = $scope.aantalSpelers - 1;
 
                 });
             }
@@ -78,8 +81,7 @@
 
 
         var bewaar = function(e){
-            e.preventDefault();
-            luikVallen();
+            //e.preventDefault();
             var allListItems = $('.speler');
             var selectie = [];
             var lengte = allListItems.length;
@@ -90,6 +92,8 @@
                 alert("gelieve juist 23 spelers te selecteren, u heeft er "+selectie.length);
             }
             else{
+                luikVallen();
+
                 //spelers posten
 
                 //spelers outfaden
@@ -143,6 +147,7 @@
 
         getAllPlayers();
         init();
+        $scope.bewaar = bewaar;
 
 
 
