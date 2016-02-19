@@ -1,0 +1,1 @@
+als je er niet wordt gepost moet je in de selectieController.js bij de functie bewaar "e.preventDefault();" in commentaar zetten.

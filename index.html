@@ -12,6 +12,7 @@
     <h1>Welke 23 duivels zet jij op de Thalys naar het wk?</h1>
     <h2 ng-bind="aantalSpelers" class="aantal"></h2>
     <form action="PHP/post.php" method="post">
+        <canvas id="canvasLuik" class="hidden"></canvas>
         <ul>
             <li class="speler"><input type="checkbox" name="speler1" value="Toby Alderweireld">
                 <img src="img/Alderweireld.png" alt="Alderweireld">
@@ -129,7 +130,7 @@
         <input type="submit" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" class="hidden">
 
     </form>
-    <div id="trein"></div>
+    <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">
 
 </main>
 
