@@ -95,11 +95,10 @@
 
                 //spelers posten
 
-                //spelers outfaden
-                //allListItems[0].fadeOut("slow");
-                console.log($scope.alleSpelers[0]);
-                allListItems.fadeOut("slow");
-                //treintje weg
+
+                //allListItems.fadeOut("slow");
+
+
                 $("#btnWijzig").css('visibility', 'hidden');
                 $("#btnBewaar").hide();
 
@@ -108,18 +107,26 @@
 
 
         var luikVallen = function () {
-            $("#canvasLuik").removeClass("hidden");
+            //$("#canvasLuik").removeClass("hidden");
             var t = $("#trein");
+            var hoogte = $("#lijstAlleSpelers").height();
+            $("#canvasLuik").css({height: hoogte }).removeClass("hidden");
+            var b = $("#luikBackground");
+
+            b.css({"margin-top": "-16px" });
+
+
+            console.log(hoogte);
             t.animate({
-                top: "500px"
+                top: hoogte+"px"
             }, {
                 duration: "slow",
                 easing: "easeOutBounce"
             });
 
-            var b = $("#luikBackground");
+
             b.animate({
-                height: "500px"
+                height: hoogte+"px"
             },{
                 duration: "slow",
                 easing: "easeOutBounce"
@@ -162,6 +169,7 @@
                 allListItems[i].addEventListener("click", selectInnerCheckbox);
             }
 
+
         };
 
 
@@ -170,7 +178,11 @@
             $scope.selectie = [];
             $("#gameSpace input:checked").each(function(){
                 console.log("koekoek");
-                $scope.selectie.push($(this).val());
+                var value = $(this).val();
+                $scope.$apply(function () {
+                    $scope.selectie.push(value);
+                });
+
             });
         };
 

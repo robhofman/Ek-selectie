@@ -16,10 +16,14 @@
     <h2 ng-bind="aantalSpelers" class="aantal"></h2>
     <form action="PHP/post.php" method="post">
         <div id="canvasLuik" class="hidden">
-            <div id="luikBackground"></div>
+            <div id="luikBackground">
+                <ul id="resultatenLijst">
+                    <li ng-repeat="speler in selectie">{{speler}}</li>
+                </ul>
+            </div>
             <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">
         </div>
-        <ul>
+        <ul id="lijstAlleSpelers">
             <li class="speler"><input type="checkbox" name="speler1" value="Toby Alderweireld">
                 <img src="img/Alderweireld.png" alt="Alderweireld">
             </li>

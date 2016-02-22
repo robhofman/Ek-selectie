@@ -11,8 +11,7 @@ main{
 }
 
 ul{
-    height: 500px;
-    overflow: scroll;
+
     background-image: url("../img/Background.png");
 }
 
@@ -43,10 +42,9 @@ li>img{
 #canvasLuik{
 
     position: absolute;
-    margin-top: 60px;
     overflow: hidden;
     width: 670px;
-    height: 520px;
+    padding: 0;
 }
 
 .driveAway{
@@ -61,7 +59,7 @@ li>img{
 }
 
 .aantal{
-    float: right;
+    text-align: right;
     width: 670px;
 }
 
