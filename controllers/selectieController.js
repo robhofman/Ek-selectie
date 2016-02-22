@@ -86,16 +86,15 @@
             var selectie = [];
             var lengte = allListItems.length;
             for (var i=0;  i<lengte; i++) {
-                if(allListItems[i].firstChild.checked == true) selectie.push(allListItems[i]);
+                if(allListItems[i].firstChild.checked == true) selectie.push(allListItems[i].firstChild.value);
             }
             if(selectie.length != 23){
                 alert("gelieve juist 23 spelers te selecteren, u heeft er "+selectie.length);
             }
             else{
+                $scope.selectie = selectie;
                 luikVallen();
-
                 //spelers posten
-
 
                 //allListItems.fadeOut("slow");
 
@@ -115,6 +114,7 @@
             var b = $("#luikBackground");
 
             b.css({"margin-top": "-16px" });
+
 
             t.animate({
                 top: hoogte+"px"
@@ -177,7 +177,7 @@
             $scope.selectie = [];
             $("#gameSpace input:checked").each(function(){
                 var value = $(this).val();
-                $scope.$apply(function () {
+                $scope.$digest(function () {
                     $scope.selectie.push(value);
                 });
 
