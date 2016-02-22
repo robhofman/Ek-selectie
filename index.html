@@ -15,7 +15,10 @@
     <h1>Welke 23 duivels zet jij op de Thalys naar het EK?</h1>
     <h2 ng-bind="aantalSpelers" class="aantal"></h2>
     <form action="PHP/post.php" method="post">
-        <canvas id="canvasLuik" width="670" height="500" class="hidden"></canvas>
+        <div id="canvasLuik" class="hidden">
+            <div id="luikBackground"></div>
+            <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">
+        </div>
         <ul>
             <li class="speler"><input type="checkbox" name="speler1" value="Toby Alderweireld">
                 <img src="img/Alderweireld.png" alt="Alderweireld">
@@ -134,13 +137,12 @@
 
     </form>
     <a href="#" ng-click="clickToOpen()">test pop-up</a>
-    <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">
 
 </main>
 
 </body>
-
 <script src="lib/jquery-1.12.0.js"></script>
+<script src="lib/jquery-ui.js"></script>
 
 <script src="lib/angular.js"></script>
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>

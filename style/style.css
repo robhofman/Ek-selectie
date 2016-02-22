@@ -33,14 +33,19 @@ li>img{
 
 #trein{
     width: 630px;
-    margin: 20px;
     height: auto;
+    position: absolute;
+    margin-top: -300px;
+    right: 0;
 }
 
 #canvasLuik{
 
     position: absolute;
-    margin-top: 70px;
+    margin-top: 60px;
+    overflow: hidden;
+    width: 670px;
+    height: 520px;
 }
 
 .driveAway{
@@ -73,4 +78,11 @@ li>img{
     cursor: pointer;
     font-family: 'Lato', sans-serif;
     font-size: 1.2em;
+}
+
+#luikBackground{
+    width: 670px;
+    height: 0;
+    background-color: #066862;
+
 }

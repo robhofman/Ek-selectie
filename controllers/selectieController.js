@@ -108,44 +108,28 @@
             }
         };
 
-        var ctx;
-        var imgTrein;
-        var interValID;
+
         var luikVallen = function () {
-            var c = document.getElementById("canvasLuik");
-            $(c).removeClass("hidden");
+            $("#canvasLuik").removeClass("hidden");
+            var t = $("#trein");
+            t.animate({
+                top: "500px"
+            }, {
+                duration: "slow",
+                easing: "easeOutBounce"
+            });
 
-            ctx = c.getContext("2d");
+            var b = $("#luikBackground");
+            b.animate({
+                height: "500px"
+            },{
+                duration: "slow",
+                easing: "easeOutBounce"
+            });
 
-
-            var vallendeTrein = new Object();
-            vallendeTrein["image"] = new Image();
-            vallendeTrein.image.src = "img/Trein_Red_Devils.png";
-            vallendeTrein["y"] = 0;
-            imgTrein = vallendeTrein;
-            interValID = setInterval(draw, 3);
-
-
-
-        };
-
-        var draw = function () {
-            ctx.beginPath();
-            ctx.rect(0,0,670,imgTrein.y);
-            ctx.fillStyle = "#066862";
-            ctx.fill();
-            ctx.drawImage(imgTrein.image, 120,imgTrein.y-imgTrein.image.height);
-            imgTrein.y += 5;
-            console.log(imgTrein.y);
-            if(imgTrein.y > 500){
-                clearInterval(interValID);
-                bounce();
-            }
-        };
-
-        var bounce = function () {
 
         };
+
 
         var wijzig = function(e){
             e.preventDefault();
@@ -182,7 +166,6 @@
         getAllPlayers();
         init();
         $scope.bewaar = bewaar;
-
 
 
     };
