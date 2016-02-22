@@ -11,6 +11,7 @@
 
         $scope.selectie = [];
 
+        var hoogteLijst = 0;
 
         var getAllPlayers = function(){
             var main = document.getElementById("gameSpace");
@@ -65,11 +66,16 @@
 
         var hideOthers  = function(e){
             e.preventDefault();
+            hoogteLijst = $("#lijstAlleSpelers").height();
+
             $("#btnBekijkTeam").addClass("hidden");
             var allListItems = $('.speler');
             for (var i=0;  i<allListItems.length; i++) {
-                if(allListItems[i].firstChild.checked == false) $(allListItems[i]).addClass("hidden");
+                var item = allListItems[i].firstChild;
+                if(item.checked == false) $(allListItems[i]).addClass("hidden");
             }
+
+            $("#lijstAlleSpelers").css({height: hoogteLijst});
             //this.className += 'hidden';
             $("#btnWijzig").removeClass("hidden");
             $("#btnBewaar").removeClass("hidden");
