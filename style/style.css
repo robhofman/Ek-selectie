@@ -37,6 +37,7 @@ li>img{
     position: absolute;
     margin-top: -300px;
     right: 0;
+    z-index: 51;
 }
 
 #canvasLuik{
@@ -69,7 +70,7 @@ li>img{
     margin: 150px 110px !important;
 }
 
-#btnBewaarPopup{
+.sporzaButton{
     background-color: #066862;
     border: 0;
     padding: 15px 30px;
@@ -80,7 +81,12 @@ li>img{
     font-size: 1.2em;
 }
 
+.sporzaButton:disabled{
+    opacity: 0.5;
+}
+
 #luikBackground{
+    z-index: 50;
     width: 670px;
     height: 0;
     background-color: #066862;

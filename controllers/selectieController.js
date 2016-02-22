@@ -9,13 +9,8 @@
         $scope.alleSpelers = [];
         $scope.aantalIsNietVoldoende = true;
 
+        $scope.selectie = [];
 
-        $scope.clickToOpen = function () {
-            ngDialog.open({
-                template: 'externalTemplate.html',
-                scope: $scope
-            });
-        };
 
         var getAllPlayers = function(){
             var main = document.getElementById("gameSpace");
@@ -28,7 +23,7 @@
             if($scope.aantalSpelers == 0){
                 $scope.$apply(function(){
                     $scope.aantalIsNietVoldoende = false;
-
+                    openPopup();
                 });
             }
             else{
@@ -40,7 +35,12 @@
         };
 
 
-
+        var openPopup = function () {
+            ngDialog.open({
+                template: 'externalTemplate.html',
+                scope: $scope
+            });
+        };
 
         var selectInnerCheckbox = function(){
             if(this.firstChild.checked == true){
@@ -65,17 +65,16 @@
 
         var hideOthers  = function(e){
             e.preventDefault();
+            $("#btnBekijkTeam").addClass("hidden");
             var allListItems = $('.speler');
             for (var i=0;  i<allListItems.length; i++) {
                 if(allListItems[i].firstChild.checked == false) $(allListItems[i]).addClass("hidden");
             }
-            this.className += 'hidden';
-            var btnWijzig = document.getElementById("btnWijzig");
-            var btnBewaar = document.getElementById("btnBewaar");
+            //this.className += 'hidden';
+            $("#btnWijzig").removeClass("hidden");
+            $("#btnBewaar").removeClass("hidden");
+            getTeam();
 
-            //show bewaar en wijzig button
-            btnWijzig.className = "";
-            btnBewaar.className = "";
         };
 
 
@@ -103,7 +102,6 @@
                 //treintje weg
                 $("#btnWijzig").css('visibility', 'hidden');
                 $("#btnBewaar").hide();
-                $("#trein").addClass('driveAway')
 
             }
         };
@@ -126,6 +124,10 @@
                 duration: "slow",
                 easing: "easeOutBounce"
             });
+            setTimeout(function(){ t.addClass('driveAway');}, 1000);
+
+
+
 
 
         };
@@ -133,9 +135,8 @@
 
         var wijzig = function(e){
             e.preventDefault();
-            this.className = "hidden";
-            var btnBewaar = document.getElementById("btnBewaar");
-            btnBewaar.className = "hidden";
+            $(this).addClass("hidden");
+            $("#btnBewaar").addClass('hidden');
             //document.getElementById("btnBekijkTeam").className = "";
             $("#btnBekijkTeam").removeClass("hidden");
 
@@ -163,11 +164,22 @@
 
         };
 
+
+
+        var getTeam = function () {
+            $scope.selectie = [];
+            $("#gameSpace input:checked").each(function(){
+                console.log("koekoek");
+                $scope.selectie.push($(this).val());
+            });
+        };
+
+
         getAllPlayers();
         init();
         $scope.bewaar = bewaar;
 
-
+        //luikVallen();
     };
 
 
