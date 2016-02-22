@@ -81,6 +81,7 @@
 
         var bewaar = function(e){
             //e.preventDefault();
+            ngDialog.close();
             var allListItems = $('.speler');
             var selectie = [];
             var lengte = allListItems.length;
@@ -115,8 +116,6 @@
 
             b.css({"margin-top": "-16px" });
 
-
-            console.log(hoogte);
             t.animate({
                 top: hoogte+"px"
             }, {
@@ -168,7 +167,7 @@
             for (var i=0;  i<allListItems.length; i++) {
                 allListItems[i].addEventListener("click", selectInnerCheckbox);
             }
-
+            //setTimeout(function(){luikVallen();}, 1000);
 
         };
 
@@ -177,7 +176,6 @@
         var getTeam = function () {
             $scope.selectie = [];
             $("#gameSpace input:checked").each(function(){
-                console.log("koekoek");
                 var value = $(this).val();
                 $scope.$apply(function () {
                     $scope.selectie.push(value);
@@ -191,7 +189,8 @@
         init();
         $scope.bewaar = bewaar;
 
-        //luikVallen();
+
+
     };
 
 
