@@ -13,13 +13,13 @@ foreach($postArray as $value){
         case 'Toby Alderweireld':
             $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Toby Alderweireld'";
 
-            if ($conn->query($sql) === TRUE) {
+            if ($db->query($sql) === TRUE) {
                 echo "Record updated successfully";
             } else {
-                echo "Error updating record: " . $conn->error;
+                echo "Error updating record: " . $db->error;
             }
 
-            $conn->close();
+            $db->close();
             break;
     }
 }
