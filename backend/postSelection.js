@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	console.log("ik wordt ingeladen");
 	$('#btnBewaar').click(function(){
-
+			console.log("klik btnBewaar");
 			var selected = [];
 			$('#checkboxes input:checked').each(function() {
     		selected.push($(this).attr('value'));
