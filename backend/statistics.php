@@ -23,7 +23,7 @@ if ($result = $mysqli->query("SELECT * FROM selectiemaker_inzendingen")) {
 if ($result = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
     printf("Select returned %d rows.\n", $result->num_rows);
 
-    $rowSpelers = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    $rowSpelers = mysqli_fetch_all($result, MYSQLI_BOTH);
     printf ("%s %s %s\n", $rowSpelers[0], $rowSpelers[1], $rowSpelers[2]);
 
 
