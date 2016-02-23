@@ -26,7 +26,7 @@ $rowCount = $result->num_rows;
     <!--selecteer spelers-->
     <h1>Welke 23 duivels zet jij op de Thalys naar het EK?</h1>
     <h2 ng-bind="aantalSpelers" class="aantal"></h2>
-    <form action="php/post.php" method="post">
+    <!--<form action="php/post.php" method="post">-->
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
                 <ul id="resultatenLijst">
@@ -157,7 +157,7 @@ $rowCount = $result->num_rows;
         <!--<input type="submit" class="sporzaButton hidden" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" >-->
 
         <button ng-disabled="aantalIsNietVoldoende" class="sporzaButton hidden" id="btnBewaar">Stuur uw selectie naar Sporza!</button>
-    </form>
+    <!--</form>-->
 
 </main>
 <?php
