@@ -13,8 +13,11 @@ if ($mysqli->connect_errno) {
 if ($result = $mysqli->query("SELECT * FROM selectiemaker_inzendingen")) {
     printf("Select returned %d rows.\n", $result->num_rows);
 
-    $rowInzendingen = mysqli_fetch_array($result, MYSQLI_NUM);
-    printf ("%s (%s)\n", $rowInzendingen[0], $rowInzendingen[1]);
+//    $rowInzendingen = mysqli_fetch_array($result, MYSQLI_NUM);
+//    printf ("%s (%s)\n", $rowInzendingen[0], $rowInzendingen[1]);
+
+
+    $json1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     /* free result set */
     $result->close();
@@ -23,18 +26,18 @@ if ($result = $mysqli->query("SELECT * FROM selectiemaker_inzendingen")) {
 if ($result2 = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
     printf("Select returned %d rows.\n", $result2->num_rows);
 
-    $rowSpelers = mysqli_fetch_array($result2, MYSQLI_NUM);
-    printf ("%s %s %s\n", $rowSpelers[0][0], $rowSpelers[0][1], $rowSpelers[0][2]);
-    printf ("%s %s %s\n", $rowSpelers[1][0], $rowSpelers[1][1], $rowSpelers[1][2]);
-    printf ("%s %s %s\n", $rowSpelers[1][0], $rowSpelers[1][1], $rowSpelers[1][2]);
+//    $rowSpelers = mysqli_fetch_array($result2, MYSQLI_NUM);
+//    printf ("%s %s %s\n", $rowSpelers[0], $rowSpelers[1], $rowSpelers[2]);
+
+    array_push($json1,mysqli_fetch_all($result2, MYSQLI_ASSOC));
 
     /* free result set */
     $result2->close();
 }
 
-$finalArray = array_push($rowInzendingen, $rowSpelers);
-var_dump($finalArray);
-printf($finalArray);
+//$finalArray = array_push($rowInzendingen, $rowSpelers);
+var_dump($json1);
+printf($json1);
 ///* If we have to retrieve large amount of data we use MYSQLI_USE_RESULT */
 //if ($result = $mysqli->query("SELECT * FROM City", MYSQLI_USE_RESULT)) {
 //
