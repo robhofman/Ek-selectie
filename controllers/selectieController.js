@@ -197,6 +197,18 @@
             }
         };
 
+        var selecteer23 = function () {
+            var allListItems = document.getElementsByClassName('speler');
+            for (var i=0;  i<23; i++) {
+                allListItems[i].firstChild.checked = true;
+                $(allListItems[i]).addClass("checked");
+                $(allListItems[i]).find("i").removeClass("hidden");
+                $scope.aantalSpelers = 0;
+                $scope.$apply()
+            }
+
+        }
+
         var init = function(){
             var submit = document.getElementById('btnBekijkTeam');
             submit.addEventListener("click", hideOthers);
@@ -211,6 +223,10 @@
             for (var i=0;  i<allListItems.length; i++) {
                 allListItems[i].addEventListener("click", selectInnerCheckbox);
             }
+
+            var btnSelecteer23 = document.getElementById("btnSelecteer23");
+            btnSelecteer23.addEventListener("click", selecteer23);
+
             //setTimeout(function(){luikVallen();}, 1000);
 
         };
@@ -233,6 +249,7 @@
         init();
         $scope.bewaar = bewaarPopUp;
         $scope.wijzig = wijzig;
+
 
 
     };
