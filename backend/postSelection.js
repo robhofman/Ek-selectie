@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	console.log("ik wordt ingeladen");
 	$('#btnBewaar').click(function(){
 
 			var selected = [];
