@@ -148,21 +148,24 @@ $rowCount = $result->num_rows;
             <li class="speler"><input type="checkbox" name="speler35" value="speler35">
                 <img src="img/Ciman.png" alt="Ciman">
             </li>
-
         </ul>-->
 
         <input type="submit" class="sporzaButton" id="btnBekijkTeam" value="Bekijk je selectie">
         <input type="submit" class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >
-        <input type="submit" class="sporzaButton hidden" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" >
-
+        <!--<input type="submit" class="sporzaButton hidden" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" >-->
+        <button ng-disabled="aantalIsNietVoldoende" class="sporzaButton hidden" id="btnBewaar">Stuur uw selectie naar Sporza!</button>
     </form>
 
 </main>
+<?php
+$result->free();
+$db->close();
+?>
 
 </body>
 <script src="lib/jquery-1.12.0.js"></script>
 <script src="lib/jquery-ui.js"></script>
-
+<script src="backend/postSelection.js"></script>
 <script src="lib/angular.js"></script>
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>
 
