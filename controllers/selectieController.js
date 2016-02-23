@@ -152,22 +152,30 @@
 
             b.css({"margin-top": "-16px" });
 
-
             t.animate({
                 top: hoogte+"px"
             }, {
                 duration: "slow",
                 easing: "easeOutBounce"
             });
-
+            var hoogteMetMarge = hoogte+16;
 
             b.animate({
-                height: hoogte+"px"
+                height: hoogteMetMarge+"px"
             },{
                 duration: "slow",
                 easing: "easeOutBounce"
             });
-            setTimeout(function(){ t.addClass('driveAway');}, 1000);
+
+
+
+            setTimeout(function(){
+                t.animate({
+                    left: -700+"px"
+                },{
+                    duration: 2000
+                });
+            }, 1000);
 
             setTimeout(function(){ showResultList();}, 1000);
 
@@ -178,7 +186,7 @@
         };
 
         var showResultList = function () {
-            $("#resultatenLijst").animate({opacity: 1}, 3000);
+            $("#resultatenLijst").removeClass("hidden").animate({opacity: 1}, 3000);
         };
 
 

@@ -41,7 +41,7 @@ li>img{
     height: auto;
     position: absolute;
     margin-top: -300px;
-    right: 0;
+    right: 30px;
     z-index: 51;
 }
 
@@ -54,11 +54,7 @@ li>img{
     z-index: 40;
 }
 
-.driveAway{
-    -webkit-transition: -webkit-transform 2s ease-in;
-    -webkit-transform:translate(-750px,0px);
 
-}
 
 #lijstAlleSpelers .checked{
     /*border: 3px solid yellow;
@@ -122,4 +118,8 @@ li>img{
     color: #b01124;
     font-size: 2em;
     margin: -10px;
+}
+
+#checkboxes{
+    width: 670px;
 }
