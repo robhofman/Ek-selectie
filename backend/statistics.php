@@ -7,14 +7,14 @@ if ($mysqli->connect_errno) {
     exit();
 }
 
-///* Create table doesn't return a resultset */
-//if ($mysqli->query("CREATE TEMPORARY TABLE myCity LIKE City") === TRUE) {
-//    printf("Table myCity successfully created.\n");
-//}
+
 
 /* Select queries return a resultset */
 if ($result = $mysqli->query("SELECT * FROM selectiemaker_inzendingen")) {
     printf("Select returned %d rows.\n", $result->num_rows);
+
+    $row = mysqli_fetch_array($result, MYSQLI_NUM);
+    printf ("%s (%s)\n", $row[0], $row[1]);
 
     /* free result set */
     $result->close();
