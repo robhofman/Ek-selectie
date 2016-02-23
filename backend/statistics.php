@@ -23,7 +23,12 @@ if ($db->query($sql) === TRUE) { echo "Query gelukt"; } else { echo "Query mislu
 //$sql = 'SELECT id, totaal FROM selectiemaker_inzendingen WHERE id=1';
 //$db->query($sql);
 
+$result = mysql_query("SELECT * FROM selectiemaker_inzendingen");
 
+while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+    printf("ID: %s  Name: %s", $row["id"], $row["totaal"]);
+    echo $row["id"].$row["totaal"];
+}
 
 //$json1 = mysqli_fetch_all($result, MYSQLI_ASSOC);
 //
