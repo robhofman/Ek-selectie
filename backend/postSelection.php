@@ -9,7 +9,22 @@ $postArray = $_POST;
 
 foreach($postArray as $value){
     var_dump($value);
+    switch($value){
+        case 'Toby Alderweireld':
+            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Toby Alderweireld'";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "Record updated successfully";
+            } else {
+                echo "Error updating record: " . $conn->error;
+            }
+
+            $conn->close();
+            break;
+    }
 }
+
+
 
 //foreach ($postArray as $value) {
 //    switch($value) {
