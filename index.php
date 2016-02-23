@@ -20,6 +20,8 @@ $rowCount = $result->num_rows;
     <title>Wie gaat mee naar Frankrijk</title>
 </head>
 <body>
+<script src="lib/jquery-1.12.0.js"></script>
+<script src="backend/postSelection.js"></script>
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
     <h1>Welke 23 duivels zet jij op de Thalys naar het EK?</h1>
@@ -163,9 +165,9 @@ $db->close();
 ?>
 
 </body>
-<script src="lib/jquery-1.12.0.js"></script>
+
 <script src="lib/jquery-ui.js"></script>
-<script src="backend/postSelection.js"></script>
+
 <script src="lib/angular.js"></script>
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>
 
