@@ -20,14 +20,15 @@ if ($result = $mysqli->query("SELECT * FROM selectiemaker_inzendingen")) {
     $result->close();
 }
 
-if ($result = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
+if ($result2 = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
     printf("Select returned %d rows.\n", $result->num_rows);
 
-    $rowSpelers = mysqli_fetch_array($result, MYSQLI_NUM);
-    printf ("%s %s %s\n", $rowSpelers[0], $rowSpelers[1], $rowSpelers[2]);
+    $rowSpelers = mysqli_fetch_array($result2, MYSQLI_NUM);
+    printf ("%s %s %s\n", $rowSpelers[0][0], $rowSpelers[0][1], $rowSpelers[0][2]);
+    printf ("%s %s %s\n", $rowSpelers[1][0], $rowSpelers[1][1], $rowSpelers[1][2]);
 
     /* free result set */
-    $result->close();
+    $result2->close();
 }
 
 $finalArray = array_push($rowInzendingen, $rowSpelers);
