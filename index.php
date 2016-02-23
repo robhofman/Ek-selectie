@@ -169,7 +169,11 @@ $db->close();
 ?>
 
 </body>
-
+<script type="text/ng-template" id="testTemplate">
+    <h1>U heeft uw {{23 - aantalSpelers}} spelers gekozen</h1>
+    <input type="button" ng-click="bewaar()" value="Bewaar" class="sporzaButton" id="btnBewaarPopup"/>
+    <input type="button" ng-click="wijzig()" value="Wijzig" class="sporzaButton" id="btnWijzigPopup">
+</script>
 <script src="lib/jquery-ui.js"></script>
 
 <script src="lib/angular.js"></script>
