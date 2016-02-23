@@ -10,17 +10,20 @@ main{
     font-family: 'Lato', sans-serif;
 }
 
-ul{
-    height: 500px;
-    overflow: scroll;
+#lijstAlleSpelers{
+
     background-image: url("../img/Background.png");
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }
 
-li{
+.verborgen{
+    visibility: hidden !important;
+}
+
+#lijstAlleSpelers>li{
     width: 60px;
     /**height: 220px;*/
     display: inline-block;
@@ -43,10 +46,9 @@ li>img{
 #canvasLuik{
 
     position: absolute;
-    margin-top: 60px;
     overflow: hidden;
     width: 670px;
-    height: 520px;
+    padding: 0;
 }
 
 .driveAway{
@@ -55,13 +57,13 @@ li>img{
 
 }
 
-.checked{
+#lijstAlleSpelers .checked{
     border: 3px solid yellow;
     margin: 2px;
 }
 
 .aantal{
-    float: right;
+    text-align: right;
     width: 670px;
 }
 
@@ -90,5 +92,17 @@ li>img{
     width: 670px;
     height: 0;
     background-color: #066862;
+
+}
+
+#resultatenLijst{
+    padding: 0;
+    list-style-type: none;
+    color: white;
+}
+#resultatenLijst>li{
+    width: 100%;
+    text-align: center;
+    ;
 
 }

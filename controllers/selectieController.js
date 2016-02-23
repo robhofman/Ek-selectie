@@ -11,6 +11,7 @@
 
         $scope.selectie = [];
 
+        var hoogteLijst = 0;
 
         var getAllPlayers = function(){
             var main = document.getElementById("gameSpace");
@@ -65,11 +66,16 @@
 
         var hideOthers  = function(e){
             e.preventDefault();
+            hoogteLijst = $("#lijstAlleSpelers").height();
+
             $("#btnBekijkTeam").addClass("hidden");
             var allListItems = $('.speler');
             for (var i=0;  i<allListItems.length; i++) {
-                if(allListItems[i].firstChild.checked == false) $(allListItems[i]).addClass("hidden");
+                var item = allListItems[i].firstChild;
+                if(item.checked == false) $(allListItems[i]).addClass("hidden");
             }
+
+            $("#lijstAlleSpelers").css({height: hoogteLijst});
             //this.className += 'hidden';
             $("#btnWijzig").removeClass("hidden");
             $("#btnBewaar").removeClass("hidden");
@@ -81,25 +87,24 @@
 
         var bewaar = function(e){
             //e.preventDefault();
+            ngDialog.close();
             var allListItems = $('.speler');
             var selectie = [];
             var lengte = allListItems.length;
             for (var i=0;  i<lengte; i++) {
-                if(allListItems[i].firstChild.checked == true) selectie.push(allListItems[i]);
+                if(allListItems[i].firstChild.checked == true) selectie.push(allListItems[i].firstChild.value);
             }
             if(selectie.length != 23){
                 alert("gelieve juist 23 spelers te selecteren, u heeft er "+selectie.length);
             }
             else{
+                $scope.selectie = selectie;
                 luikVallen();
-
                 //spelers posten
 
-                //spelers outfaden
-                //allListItems[0].fadeOut("slow");
-                console.log($scope.alleSpelers[0]);
-                allListItems.fadeOut("slow");
-                //treintje weg
+                //allListItems.fadeOut("slow");
+
+
                 $("#btnWijzig").css('visibility', 'hidden');
                 $("#btnBewaar").hide();
 
@@ -108,18 +113,25 @@
 
 
         var luikVallen = function () {
-            $("#canvasLuik").removeClass("hidden");
+            //$("#canvasLuik").removeClass("hidden");
             var t = $("#trein");
+            var hoogte = $("#lijstAlleSpelers").height();
+            $("#canvasLuik").css({height: hoogte }).removeClass("hidden");
+            var b = $("#luikBackground");
+
+            b.css({"margin-top": "-16px" });
+
+
             t.animate({
-                top: "500px"
+                top: hoogte+"px"
             }, {
                 duration: "slow",
                 easing: "easeOutBounce"
             });
 
-            var b = $("#luikBackground");
+
             b.animate({
-                height: "500px"
+                height: hoogte+"px"
             },{
                 duration: "slow",
                 easing: "easeOutBounce"
@@ -161,6 +173,7 @@
             for (var i=0;  i<allListItems.length; i++) {
                 allListItems[i].addEventListener("click", selectInnerCheckbox);
             }
+            //setTimeout(function(){luikVallen();}, 1000);
 
         };
 
@@ -169,8 +182,11 @@
         var getTeam = function () {
             $scope.selectie = [];
             $("#gameSpace input:checked").each(function(){
-                console.log("koekoek");
-                $scope.selectie.push($(this).val());
+                var value = $(this).val();
+                $scope.$digest(function () {
+                    $scope.selectie.push(value);
+                });
+
             });
         };
 
@@ -179,7 +195,8 @@
         init();
         $scope.bewaar = bewaar;
 
-        //luikVallen();
+
+
     };
 
 
