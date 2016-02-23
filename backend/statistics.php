@@ -20,13 +20,18 @@ if (mysqli_connect_errno()) {
 //
 //echo json_encode($json1);
 
-$query = mysql_query('SELECT id, naam, aantal FROM selectiemaker_spelers');
+$spelers = array();
 
-while($row = mysql_fetch_assoc($query)){
-    echo $row['id'].'<br>';
-    echo $row['naam'].'<br>';
-    echo $row['aantal'].'<br>';
+$result = mysqli_query($mysqli, 'SELECT id, naam, aantal FROM selectiemaker_spelers');
+
+while($row = mysqli_fetch_assoc($result)){
+
+
+    array_push($spelers, $row);
+    //echo $spelers;
 }
+
+echo json_encode($spelers);
 
 
 ?>
