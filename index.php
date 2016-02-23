@@ -25,8 +25,12 @@ $rowCount = $result->num_rows;
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
     <h1>Welke 23 duivels zet jij op de Thalys naar het EK?</h1>
-    <h2 ng-bind="aantalSpelers" class="aantal"></h2>
-    <!--<form action="php/post.php" method="post">-->
+    <div>
+        <button class="sporzaButton" id="btnBekijkTeam" >Bekijk je selectie</button>
+        <button class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >Wijzig je team</button>
+        <button class="sporzaButton hidden" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" >Bewaar</button>
+        <h2 ng-bind="aantalSpelers" class="aantal"></h2>
+    </div>    <!--<form action="php/post.php" method="post">-->
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
                 <ul id="resultatenLijst">
@@ -152,11 +156,9 @@ $rowCount = $result->num_rows;
             </li>
         </ul>-->
 
-        <input type="submit" class="sporzaButton" id="btnBekijkTeam" value="Bekijk je selectie">
-        <input type="submit" class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >
+
         <!--<input type="submit" class="sporzaButton hidden" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" >-->
 
-        <button ng-disabled="aantalIsNietVoldoende" class="sporzaButton hidden" id="btnBewaar">Stuur uw selectie naar Sporza!</button>
     <!--</form>-->
 
 </main>
