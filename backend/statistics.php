@@ -32,7 +32,7 @@ if ($result = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
 
 $finalArray = array_push($rowInzendingen, $rowSpelers);
 
-echo($finalArray);
+printf($finalArray);
 ///* If we have to retrieve large amount of data we use MYSQLI_USE_RESULT */
 //if ($result = $mysqli->query("SELECT * FROM City", MYSQLI_USE_RESULT)) {
 //
