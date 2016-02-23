@@ -1,5 +1,5 @@
 <?php
-include 'backend/dbconnect.php';
+include 'dbconnect.php';
 
 $postArray = [];
 $postArray = $_POST;
