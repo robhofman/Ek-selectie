@@ -8,7 +8,7 @@ $postArray = $_POST;
 //var_dump($postArray);
 
 foreach($postArray as $value){
-    //var_dump($value);
+    var_dump($value);
     switch($value){
         case 'Toby Alderweireld':
             $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Toby Alderweireld'";
