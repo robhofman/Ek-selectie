@@ -20,7 +20,7 @@ $rowCount = $result->num_rows;
     <title>Wie gaat mee naar Frankrijk</title>
 </head>
 <body>
-<script src="lib/jquery-1.12.0.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="backend/postSelection.js"></script>
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
