@@ -5,7 +5,12 @@ $postArray = [];
 $postArray = $_POST;
 
 
-var_dump($postArray);
+//var_dump($postArray);
+
+foreach($postArray as $value){
+    var_dump($value);
+}
+
 //foreach ($postArray as $value) {
 //    switch($value) {
 //        case 'Toby Alderweireld':
