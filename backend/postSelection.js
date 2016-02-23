@@ -1,11 +1,11 @@
 $(document).ready(function(){
 	console.log("ik wordt ingeladen");
-	$('#btnBewaarPopup').click(function(){
+	$('#btnBewaar').click(function(){
 			console.log("klik btnBewaar");
 			var selected = [];
 			$('#checkboxes input:checked').each(function() {
     		selected.push($(this).attr('value'));
-    		console.log(selected);		
+    		console.log(selected);
 		
 		});
 

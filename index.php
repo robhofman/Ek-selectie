@@ -155,6 +155,7 @@ $rowCount = $result->num_rows;
         <input type="submit" class="sporzaButton" id="btnBekijkTeam" value="Bekijk je selectie">
         <input type="submit" class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >
         <!--<input type="submit" class="sporzaButton hidden" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" >-->
+
         <button ng-disabled="aantalIsNietVoldoende" class="sporzaButton hidden" id="btnBewaar">Stuur uw selectie naar Sporza!</button>
     </form>
 
