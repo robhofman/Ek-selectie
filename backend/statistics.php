@@ -13,7 +13,7 @@ if ($mysqli->connect_errno) {
 //}
 
 /* Select queries return a resultset */
-if ($result = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
+if ($result = $mysqli->query("SELECT * FROM selectiemaker_inzendingen")) {
     printf("Select returned %d rows.\n", $result->num_rows);
 
     /* free result set */
@@ -33,7 +33,7 @@ if ($result = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
 //}
 
 $mysqli->close();
-?>
+
 //// include 'dbconnect.php';
 //// $q1 = 'SELECT id, naam, aantal FROM ek_spelers';
 //// $result1 = $db->query($q1);
