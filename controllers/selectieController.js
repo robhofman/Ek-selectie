@@ -46,18 +46,20 @@
         var selectInnerCheckbox = function(){
             if(this.firstChild.checked == true){
                 this.firstChild.checked = false;
+                $(this).find("i").addClass("hidden");
                 $(this).removeClass('checked');
                 $scope.$apply(function (){
                         $scope.aantalSpelers = $scope.aantalSpelers + 1;
-
                     });
 
             }
             else{
                 this.firstChild.checked = true;
                 $(this).addClass("checked");
+                $(this).find("i").removeClass("hidden");
                 $scope.$apply(function(){
                     $scope.aantalSpelers = $scope.aantalSpelers - 1;
+
 
                 });
             }
@@ -105,8 +107,9 @@
                 //allListItems.fadeOut("slow");
 
 
-                $("#btnWijzig").css('visibility', 'hidden');
-                $("#btnBewaar").hide();
+                $("#btnWijzig").addClass("verborgen");
+                $("#btnBewaar").addClass("hidden");
+                $("#btnBekijkTeam").addClass("hidden");
 
             }
         };
@@ -138,10 +141,16 @@
             });
             setTimeout(function(){ t.addClass('driveAway');}, 1000);
 
+            setTimeout(function(){ showResultList();}, 1000);
 
 
 
 
+
+        };
+
+        var showResultList = function () {
+            $("#resultatenLijst").animate({opacity: 1}, 3000);
         };
 
 
