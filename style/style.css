@@ -92,6 +92,7 @@ li>img{
     width: 670px;
     height: 0;
     background-color: #066862;
+    overflow: hidden;
 
 }
 
@@ -101,8 +102,10 @@ li>img{
     color: white;
     opacity: 0;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
     overflow-x: hidden;
+    width: 102%;
+    padding-bottom: 16px;
 }
 #resultatenLijst>li{
     width: 100%;

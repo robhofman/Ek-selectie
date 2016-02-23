@@ -177,7 +177,7 @@
                 });
             }, 1000);
 
-            setTimeout(function(){ showResultList();}, 1000);
+            setTimeout(function(){ showResultList(hoogte);}, 1000);
 
 
 
@@ -185,8 +185,8 @@
 
         };
 
-        var showResultList = function () {
-            $("#resultatenLijst").removeClass("hidden").animate({opacity: 1}, 3000);
+        var showResultList = function (hoogte) {
+            $("#resultatenLijst").removeClass("hidden").css({height: hoogte}).animate({opacity: 1}, 3000);
         };
 
 
