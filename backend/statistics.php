@@ -13,13 +13,26 @@ if ($mysqli->connect_errno) {
 if ($result = $mysqli->query("SELECT * FROM selectiemaker_inzendingen")) {
     printf("Select returned %d rows.\n", $result->num_rows);
 
-    $row = mysqli_fetch_array($result, MYSQLI_NUM);
+    $rowInzendingen = mysqli_fetch_array($result, MYSQLI_NUM);
     printf ("%s (%s)\n", $row[0], $row[1]);
 
     /* free result set */
     $result->close();
 }
 
+if ($result = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
+    printf("Select returned %d rows.\n", $result->num_rows);
+
+    $rowSpelers = mysqli_fetch_array($result, MYSQLI_NUM);
+    printf ("%s %s %s\n", $row[0], $row[1], $row[2]);
+
+    /* free result set */
+    $result->close();
+}
+
+$finalArray = array_push($rowInzendingen, $rowSpelers);
+
+echo($finalArray);
 ///* If we have to retrieve large amount of data we use MYSQLI_USE_RESULT */
 //if ($result = $mysqli->query("SELECT * FROM City", MYSQLI_USE_RESULT)) {
 //
