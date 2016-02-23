@@ -30,5 +30,4 @@ $result2 = $db->query($sql2);
 array_push($json1,mysqli_fetch_all($result2, MYSQLI_ASSOC));
 
 echo json_encode($json1);
-
 ?>
