@@ -67,7 +67,8 @@ li>img{
 
 .aantal{
     text-align: right;
-    width: 670px;
+    display: inline;
+    float: right;
 }
 
 .ngdialog.ngdialog-theme-default .ngdialog-content {

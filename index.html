@@ -14,8 +14,14 @@
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
     <h1>Welke 23 duivels zet jij op de Thalys naar het EK?</h1>
-    <h2 ng-bind="aantalSpelers" class="aantal"></h2>
+    <div>
+        <button class="sporzaButton" id="btnBekijkTeam" >Bekijk je selectie</button>
+        <button class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >Wijzig je team</button>
+        <button class="sporzaButton hidden" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" >Bewaar</button>
+        <h2 ng-bind="aantalSpelers" class="aantal"></h2>
+    </div>
     <form action="php/post.php" method="post">
+
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
                 <ul id="resultatenLijst" >
@@ -26,160 +32,162 @@
         </div>
         <ul id="lijstAlleSpelers">
             <li class="speler"><input type="checkbox" name="speler1" value="Toby Alderweireld">
-                <img src="img/Alderweireld.png" alt="Alderweireld">
+                <img src="img/Toby%20Alderweireld.png" alt="Alderweireld">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler2" value="Zakaria Bakkali">
-                <img src="img/Bakkali.png" alt="Bakkali">
+                <img src="img/Zakaria%20Bakkali.png" alt="Bakkali">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler3" value="Michy Batshuayi">
-                <img src="img/Batshuayi.png" alt="Batshuayi">
+                <img src="img/Michy%20Batshuayi.png" alt="Batshuayi">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler4" value="Christian Benteke">
-                <img src="img/benteke.png" alt="Benteke">
+                <img src="img/Christian%20Benteke.png" alt="Benteke">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler5" value="Dedryck Boyata">
-                <img src="img/Boyota.png" alt="Boyota">
+                <img src="img/Dedryck%20Boyata.png" alt="Boyota">
                 <i class="fa fa-check hidden"></i>
 
             </li>
             <li class="speler"><input type="checkbox" name="speler6" value="Yannick Carrasco">
-                <img src="img/carrasco.png" alt="Carrasco">
+                <img src="img/Yannick%20Carrasco.png" alt="Carrasco">
                 <i class="fa fa-check hidden"></i>
 
             </li>
             <li class="speler"><input type="checkbox" name="speler7" value="Luis Pedro Cavanda">
-                <img src="img/cavanda.png" alt="Cavanda">
+                <img src="img/Luis%20Pedro%20Cavanda.png" alt="Cavanda">
                 <i class="fa fa-check hidden"></i>
 
             </li>
             <li class="speler"><input type="checkbox" name="speler8" value="Nacer Chadli">
-                <img src="img/Chadli.png" alt="Chadli">
+                <img src="img/Nacer%20Chadli.png" alt="Chadli">
                 <i class="fa fa-check hidden"></i>
 
             </li>
             <li class="speler"><input type="checkbox" name="speler9" value="Laurens De Bock">
-                <img src="img/debock.png" alt="De Bock">
+                <img src="img/Laurens%20De%20Bock.png" alt="De Bock">
                 <i class="fa fa-check hidden"></i>
 
             </li>
             <li class="speler"><input type="checkbox" name="speler10" value="Kevin De Bruyne">
-                <img src="img/debruyne.png" alt="De Bruyne">
+                <img src="img/Kevin%20De%20Bruyne.png" alt="De Bruyne">
                 <i class="fa fa-check hidden"></i>
 
             </li>
             <li class="speler"><input type="checkbox" name="speler11" value="Steven Defour">
-                <img src="img/Defour.png" alt="Defour">
+                <img src="img/Steven%20Defour.png" alt="Defour">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler12" value="Moussa Dembele">
-                <img src="img/Dembele.png" alt="Dembele">
+                <img src="img/Christian%20Benteke.png" alt="Dembele">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler13" value="Jason Denayer">
-                <img src="img/denayer.png" alt="Denayer">
+                <img src="img/Jason%20Denayer.png" alt="Denayer">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler14" value="Laurent Depoitre">
-                <img src="img/depoitre.png" alt="Depoitre">
+                <img src="img/Laurent%20Depoitre.png" alt="Depoitre">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler15" value="Eden Hazard">
-                <img src="img/E-Hazard.png" alt="Eden Hazard">
+                <img src="img/Eden%20Hazard.png" alt="Eden Hazard">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler16" value="Jean-François Gillet">
-                <img src="img/Gillet.png" alt="Gillet">
+                <img src="img/Jean-François%20Gillet.png" alt="Gillet">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler17" value="Jordan Lukaku">
-                <img src="img/J_Lukaku.png" alt="Jordan Lukaku">
+                <img src="img/Jordan%20Lukaku.png" alt="Jordan Lukaku">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler18" value="Vincent Kompany">
-                <img src="img/Kompany.png" alt="Kompany">
+                <img src="img/Vincent%20Kompany.png" alt="Kompany">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler19" value="Sven Kums">
-                <img src="img/Kums.png" alt="Kums">
+                <img src="img/Sven%20Kums.png" alt="Kums">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler20" value="Nicolas Lombaerts">
-                <img src="img/Lombaerts.png" alt="Lombaerts">
+                <img src="img/Nicolas%20Lombaerts.png" alt="Lombaerts">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler21" value="Dries Mertens">
-                <img src="img/mertens.png" alt="Mertens">
+                <img src="img/Dries%20Mertens.png" alt="Mertens">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler23" value="Thomas Meunier">
-                <img src="img/Meunier.png" alt="Meunier">
+                <img src="img/Thomas%20Meunier.png" alt="Meunier">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler24" value="Simon Mignolet">
-                <img src="img/Mignolet.png" alt="Mignolet">
+                <img src="img/Simon%20Mignolet.png" alt="Mignolet">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler25" value="Kevin Mirallas">
-                <img src="img/mirallas.png" alt="Mirallas">
+                <img src="img/Kevin%20Mirallas.png" alt="Mirallas">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler26" value="Radja Nainggolan">
-                <img src="img/Naingolan.png" alt="Naingolan">
+                <img src="img/Radja%20Nainggolan.png" alt="Naingolan">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler27" value="Divock Origi">
-                <img src="img/Origi.png" alt="Origi">
+                <img src="img/Divock%20Origi.png" alt="Origi">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler28" value="Dennis Praet">
-                <img src="img/Praet.png" alt="Praet">
+                <img src="img/Dennis%20Praet.png" alt="Praet">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler29" value="Romelu Lukaku">
-                <img src="img/R_Lukaku.png" alt="Lukaku">
+                <img src="img/Romelu%20Lukaku.png" alt="Lukaku">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler30" value="Mats Sels">
-                <img src="img/sels.png" alt="Sels">
+                <img src="img/Matz%20Sels.png" alt="Sels">
                 <i class="fa fa-check hidden"></i>
             </li>
-            <li class="speler"><input type="checkbox" name="speler31" value="Sam Vanaken">
-                <img src="img/Vanaken.png" alt="Vanaken">
+            <li class="speler"><input type="checkbox" name="speler31" value="Hans Vanaken">
+                <img src="img/Hans%20Vanaken.png" alt="Vanaken">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler32" value="Thomas Vermaelen">
-                <img src="img/Vermaelen.png" alt="Vermaelen">
+                <img src="img/Thomas%20Vermaelen.png" alt="Vermaelen">
                 <i class="fa fa-check hidden"></i>
 
             </li>
             <li class="speler"><input type="checkbox" name="speler33" value="Jan Vertonghen">
-                <img src="img/Vertonghen.png" alt="Vertonghen">
+                <img src="img/Jan%20Vertonghen.png" alt="Vertonghen">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler34" value="Axel Witsel">
-                <img src="img/witsel.png" alt="Witsel">
+                <img src="img/Axel%20Witsel.png" alt="Witsel">
                 <i class="fa fa-check hidden"></i>
             </li>
             <li class="speler"><input type="checkbox" name="speler35" value="speler35">
-                <img src="img/Ciman.png" alt="Ciman">
+                <img src="img/Laurent%20Ciman.png" alt="Ciman">
                 <i class="fa fa-check hidden"></i>
             </li>
 
         </ul>
 
-        <input type="submit" class="sporzaButton" id="btnBekijkTeam" value="Bekijk je selectie">
-        <input type="submit" class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >
-        <input type="submit" class="sporzaButton hidden" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" >
 
     </form>
 
 </main>
 
 </body>
+<script type="text/ng-template" id="testTemplate">
+    <h1>U heeft uw {{23 - aantalSpelers}} spelers gekozen</h1>
+    <input type="button" ng-click="bewaar()" value="Bewaar" class="sporzaButton" id="btnBewaarPopup"/>
+    <input type="button" ng-click="wijzig()" value="Wijzig" class="sporzaButton" id="btnWijzigPopup">
+</script>
 <script src="lib/jquery-1.12.0.js"></script>
 <script src="lib/jquery-ui.js"></script>
 

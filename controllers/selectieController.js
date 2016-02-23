@@ -22,23 +22,28 @@
 
         var checkAantalSpelers = function(){
             if($scope.aantalSpelers == 0){
-                $scope.$apply(function(){
+                /*$scope.$apply(function(){
                     $scope.aantalIsNietVoldoende = false;
                     openPopup();
-                });
+                });*/
+                $scope.aantalIsNietVoldoende = false;
+                openPopup();
+                $scope.$apply();
             }
             else{
-                $scope.$apply(function(){
+                /*$scope.$apply(function(){
                     $scope.aantalIsNietVoldoende = true;
 
-                });
+                });*/
+                $scope.aantalIsNietVoldoende = true;
+                $scope.$apply();
             }
         };
 
 
         var openPopup = function () {
             ngDialog.open({
-                template: 'externalTemplate.html',
+                template: 'testTemplate',
                 scope: $scope
             });
         };
@@ -48,20 +53,25 @@
                 this.firstChild.checked = false;
                 $(this).find("i").addClass("hidden");
                 $(this).removeClass('checked');
-                $scope.$apply(function (){
+                /*$scope.$apply(function (){
                         $scope.aantalSpelers = $scope.aantalSpelers + 1;
                     });
+                */
+                $scope.aantalSpelers = $scope.aantalSpelers + 1;
+                $scope.$apply();
 
             }
             else{
                 this.firstChild.checked = true;
                 $(this).addClass("checked");
                 $(this).find("i").removeClass("hidden");
-                $scope.$apply(function(){
+                /*$scope.$apply(function(){
                     $scope.aantalSpelers = $scope.aantalSpelers - 1;
 
 
-                });
+                });*/
+                $scope.aantalSpelers = $scope.aantalSpelers - 1;
+                $scope.$apply();
             }
             checkAantalSpelers();
         };
@@ -81,7 +91,7 @@
             //this.className += 'hidden';
             $("#btnWijzig").removeClass("hidden");
             $("#btnBewaar").removeClass("hidden");
-            getTeam();
+            //getTeam();
 
         };
 
@@ -101,12 +111,8 @@
             }
             else{
                 $scope.selectie = selectie;
+                $scope.$apply();
                 luikVallen();
-                //spelers posten
-
-                //allListItems.fadeOut("slow");
-
-
                 $("#btnWijzig").addClass("verborgen");
                 $("#btnBewaar").addClass("hidden");
                 $("#btnBekijkTeam").addClass("hidden");
@@ -114,6 +120,28 @@
             }
         };
 
+
+        var bewaarPopUp = function(e){
+            //e.preventDefault();
+            ngDialog.close();
+            var allListItems = $('.speler');
+            var selectie = [];
+            var lengte = allListItems.length;
+            for (var i=0;  i<lengte; i++) {
+                if(allListItems[i].firstChild.checked == true) selectie.push(allListItems[i].firstChild.value);
+            }
+            if(selectie.length != 23){
+                alert("gelieve juist 23 spelers te selecteren, u heeft er "+selectie.length);
+            }
+            else{
+                $scope.selectie = selectie;
+                luikVallen();
+                $("#btnWijzig").addClass("verborgen");
+                $("#btnBewaar").addClass("hidden");
+                $("#btnBekijkTeam").addClass("hidden");
+
+            }
+        };
 
         var luikVallen = function () {
             //$("#canvasLuik").removeClass("hidden");
@@ -155,7 +183,8 @@
 
 
         var wijzig = function(e){
-            e.preventDefault();
+            //e.preventDefault();
+            ngDialog.close();
             $(this).addClass("hidden");
             $("#btnBewaar").addClass('hidden');
             //document.getElementById("btnBekijkTeam").className = "";
@@ -202,8 +231,8 @@
 
         getAllPlayers();
         init();
-        $scope.bewaar = bewaar;
-
+        $scope.bewaar = bewaarPopUp;
+        $scope.wijzig = wijzig;
 
 
     };
