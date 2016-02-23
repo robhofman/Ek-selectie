@@ -9,7 +9,7 @@ $(document).ready(function(){
 		
 		});
 
-		$.post('postSelection.php',
+		$.post('backend/postSelection.php',
 		{	
 			speler1: selected[0],
 			speler2: selected[1],
