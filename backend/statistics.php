@@ -17,7 +17,7 @@
 // }
 
 include 'dbconnect.php';
-$sql = "SELECT id, totaal FROM selectiemaker_inzendingen WHERE id=1";
+$sql = "SELECT * FROM selectiemaker_inzendingen";
 if ($db->query($sql) === TRUE) { echo "Query gelukt"; } else { echo "Query mislukt" . $db->error; }
 
 //$sql = 'SELECT id, totaal FROM selectiemaker_inzendingen WHERE id=1';
