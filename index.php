@@ -168,7 +168,7 @@ $db->close();
 ?>
 
 </body>
-<script src="backend/postSelection.js"></script>
+
 <script src="lib/jquery-ui.js"></script>
 
 <script src="lib/angular.js"></script>
