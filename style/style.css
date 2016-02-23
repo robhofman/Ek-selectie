@@ -13,6 +13,7 @@ main{
 #lijstAlleSpelers{
 
     background-image: url("../img/Background.png");
+    padding: 10px 35px;
 }
 
 .hidden{
@@ -24,15 +25,16 @@ main{
 }
 
 #lijstAlleSpelers>li{
-    width: 60px;
+    width: 65px;
     /**height: 220px;*/
     display: inline-block;
     margin: 5px;
     position: relative;
+
 }
 
 li>img{
-    width: 60px;
+    width: 65px;
     z-index: 10;
 }
 
@@ -125,4 +127,9 @@ li>img{
 
 #checkboxes{
     width: 670px;
+}
+
+#innerContainerCheckboxes{
+    margin-left: auto;
+    margin-right: auto;
 }

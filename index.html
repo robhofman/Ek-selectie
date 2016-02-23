@@ -20,7 +20,6 @@
         <button class="sporzaButton hidden" id="btnBewaar" ng-disabled="aantalIsNietVoldoende" value="Bewaar" >Bewaar</button>
         <h2 ng-bind="aantalSpelers" class="aantal"></h2>
     </div>
-    <form action="php/post.php" method="post">
 
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
@@ -30,6 +29,8 @@
             </div>
             <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">
         </div>
+        <div id="checkboxes">
+            <div id="innerContainerCheckboxes">
         <ul id="lijstAlleSpelers">
             <li class="speler"><input type="checkbox" name="speler1" value="Toby Alderweireld">
                 <img src="img/Toby%20Alderweireld.png" alt="Alderweireld">
@@ -177,7 +178,8 @@
 
         </ul>
 
-    </form>
+    </div>
+    </div>
     <button id="btnSelecteer23">selecteer 23 spelers</button>
 </main>
 

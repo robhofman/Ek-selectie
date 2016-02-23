@@ -40,6 +40,7 @@ $rowCount = $result->num_rows;
             <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">
         </div>
         <div id="checkboxes">
+            <div id="innerContainerCheckboxes">
             <?php
                     echo '<ul id="lijstAlleSpelers">';
                     while($row = $result->fetch_array(MYSQLI_BOTH)){
@@ -47,6 +48,7 @@ $rowCount = $result->num_rows;
                     }
                     echo '</ul>';
             ?>
+            </div>
         </div>
     <button id="btnSelecteer23">selecteer 23 spelers</button>
         <!--

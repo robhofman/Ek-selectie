@@ -146,7 +146,7 @@
         var luikVallen = function () {
             //$("#canvasLuik").removeClass("hidden");
             var t = $("#trein");
-            var hoogte = $("#lijstAlleSpelers").height();
+            var hoogte = $("#checkboxes").height();
             $("#canvasLuik").css({height: hoogte }).removeClass("hidden");
             var b = $("#luikBackground");
 
@@ -161,7 +161,7 @@
             var hoogteMetMarge = hoogte+16;
 
             b.animate({
-                height: hoogteMetMarge+"px"
+                height: hoogte+"px"
             },{
                 duration: "slow",
                 easing: "easeOutBounce"
