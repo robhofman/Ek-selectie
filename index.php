@@ -48,6 +48,7 @@ $rowCount = $result->num_rows;
                     echo '</ul>';
             ?>
         </div>
+    <button id="btnSelecteer23">selecteer 23 spelers</button>
         <!--
         <ul id="lijstAlleSpelers">
             <li class="speler"><input type="checkbox" name="speler1" value="Toby Alderweireld">
