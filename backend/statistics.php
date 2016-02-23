@@ -23,16 +23,16 @@ if ($result = $mysqli->query("SELECT * FROM selectiemaker_inzendingen")) {
     $result->close();
 }
 
-if ($result2 = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
-    printf("Select returned %d rows.\n", $result2->num_rows);
+if ($result = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
+    printf("Select returned %d rows.\n", $result->num_rows);
 
-    $rowSpelers = mysqli_fetch_array($result2, MYSQLI_NUM);
+    $rowSpelers = mysqli_fetch_array($result, MYSQLI_NUM);
     printf ("%s %s %s\n", $rowSpelers[0], $rowSpelers[1], $rowSpelers[2]);
 
-    array_push($json1,mysqli_fetch_all($result2, MYSQLI_ASSOC));
+    array_push($json1,mysqli_fetch_all($result, MYSQLI_ASSOC));
 
     /* free result set */
-    $result2->close();
+    $result->close();
 }
 
 //$finalArray = array_push($rowInzendingen, $rowSpelers);
