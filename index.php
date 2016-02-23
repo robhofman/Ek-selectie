@@ -37,7 +37,7 @@ $rowCount = $result->num_rows;
             <?php
                     echo '<ul id="lijstAlleSpelers">';
                     while($row = $result->fetch_array(MYSQLI_BOTH)){
-                    echo '<li class=""><input type="checkbox" id="speler'.$row[0].'" name="speler'.$row[0].'" value="'.$row['naam'].'"><img src="img/'.$row['naam'].'"><i class="fa fa-check hidden"></i></li>';
+                    echo '<li class=""><input type="checkbox" id="speler'.$row[0].'" name="speler'.$row[0].'" value="'.$row['naam'].'"><img src="img/'.$row['naam'].'.png"><i class="fa fa-check hidden"></i></li>';
                     }
                     echo '</ul>';
             ?>
