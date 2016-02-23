@@ -81,26 +81,28 @@ $(document).ready(function(){
 		$('#btnBewaar').hide();
 		alert("Uw selectie is succesvol verzonden");
 
-		$.ajax({                                      
-      	url: 'backend/statistics.php',           	//the script to call to get data
+		$.ajax({
+		type: 'GET',
+      	url: 'http://goudenduivels.sporzalb.be/selectiemaker/backend/statistics.php',           	//the script to call to get data
       	data: '',                        	//you can insert url argumnets here to pass to api.php for example "id=5&parent=6"
       	dataType: 'json',                	//data format      
       	success: function(data)          	//on recieve of reply
       	{
+			console.log(data);
       		
-      		console.log("Totaal aantal inzendingen: " + data[0]['totaal']);
-
-      		console.log(data[1][0]['aantal']);
-      		console.log(data[1][1]['aantal']);
-      		console.log(data[1][2]['aantal']);
-
-      		var a = (data[1][0]['aantal'])/(data[0]['totaal']);
-      		var b = (data[1][1]['aantal'])/(data[0]['totaal']);
-      		var c = (data[1][2]['aantal'])/(data[0]['totaal']);
-        	
-        	console.log(data[1][0]['naam'] + ' ' + (Math.round(a*100)));
-        	console.log(data[1][1]['naam'] + ' ' + (Math.round(b*100)));
-        	console.log(data[1][2]['naam'] + ' ' + (Math.round(c*100)));
+      		//console.log("Totaal aantal inzendingen: " + data[0]['totaal']);
+            //
+      		//console.log(data[1][0]['aantal']);
+      		//console.log(data[1][1]['aantal']);
+      		//console.log(data[1][2]['aantal']);
+            //
+      		//var a = (data[1][0]['aantal'])/(data[0]['totaal']);
+      		//var b = (data[1][1]['aantal'])/(data[0]['totaal']);
+      		//var c = (data[1][2]['aantal'])/(data[0]['totaal']);
+        	//
+        	//console.log(data[1][0]['naam'] + ' ' + (Math.round(a*100)));
+        	//console.log(data[1][1]['naam'] + ' ' + (Math.round(b*100)));
+        	//console.log(data[1][2]['naam'] + ' ' + (Math.round(c*100)));
 
         	//var percentageTobyAlderweireld = Math.round(a*100));
         	//var percentageDivockOrigi = Math.round(b*100));
