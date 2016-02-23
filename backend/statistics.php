@@ -21,10 +21,11 @@ if ($result = $mysqli->query("SELECT * FROM selectiemaker_inzendingen")) {
 }
 
 if ($result2 = $mysqli->query("SELECT * FROM selectiemaker_spelers")) {
-    printf("Select returned %d rows.\n", $result->num_rows);
+    printf("Select returned %d rows.\n", $result2->num_rows);
 
     $rowSpelers = mysqli_fetch_array($result2, MYSQLI_NUM);
     printf ("%s %s %s\n", $rowSpelers[0][0], $rowSpelers[0][1], $rowSpelers[0][2]);
+    printf ("%s %s %s\n", $rowSpelers[1][0], $rowSpelers[1][1], $rowSpelers[1][2]);
     printf ("%s %s %s\n", $rowSpelers[1][0], $rowSpelers[1][1], $rowSpelers[1][2]);
 
     /* free result set */
