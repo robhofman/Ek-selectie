@@ -91,11 +91,17 @@ $(document).ready(function(){
 
 			var statistics = [];
 
+
 			for(i = 1; i < data.length; i++){
-				statistics.push((parseInt(data[i].aantal))/(parseInt(data[0].totaal)));
+				var obj = {};
+
+				obj.spelernaam = data[i].naam;
+				obj.percentage = (parseInt(data[i].aantal))/(parseInt(data[0].totaal));
+
+				statistics.push(obj);
 			}
 
-			console.log(statistics);
+			 console.log(statistics);
 
 
 
