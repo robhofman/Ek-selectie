@@ -109,8 +109,9 @@
                     speler = new Speler($scope.alleSpelers[i].spelernaam, "nietgekozen", statistics[i].percentage);
                 }
                 result.push(speler);
-                $scope.percentageLijst = result;
             }
+            $scope.percentageLijst = result;
+
         };
 
         var bewaarPopUp = function(e){
