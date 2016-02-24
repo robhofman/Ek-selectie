@@ -140,7 +140,8 @@
                 $("#btnWijzig").addClass("verborgen");
                 $("#btnBewaar").addClass("hidden");
                 $("#btnBekijkTeam").addClass("hidden");
-
+                var x = statistics;
+                console.log(x);
             }
         };
 

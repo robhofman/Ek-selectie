@@ -1,3 +1,4 @@
+var statistics = [];
 $(document).ready(function(){
 	console.log("ik wordt ingeladen");
 	$('#btnHidden').click(function(){
@@ -89,7 +90,6 @@ $(document).ready(function(){
 			console.log(data[0].totaal);
 
 
-			var statistics = [];
 
 
 			for(i = 1; i < data.length; i++){
