@@ -153,9 +153,13 @@ foreach($postArray as $value){
     }
 }
 
-$stmt2 = $db->prepare("UPDATE selectiemaker_inzendingen SET totaal=totaal+1 WHERE id=1;");
-$stmt2->execute();
-$stmt2->close();
+$updateInzendingen = "UPDATE selectiemaker_inzendingen SET totaal=totaal+1";
+
+if ($db->query($updateInzendingen) === TRUE) { echo "Totaal werd upgedate"; } else { echo "Error updating record totaal: " . $db->error; }
+
+//$stmt2 = $db->prepare("UPDATE selectiemaker_inzendingen SET totaal=totaal+1 WHERE id=1;");
+//$stmt2->execute();
+//$stmt2->close();
 
 $db->close();
 ?>
