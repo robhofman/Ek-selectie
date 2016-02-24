@@ -13,7 +13,7 @@ function openWindow(url) {
 $(document).ready(function() {
 
     $.ajaxSetup({ cache: true });
-    $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
+    $.getScript('//connect.facebook.net/en_US/sdk.js', function(){
         FB.init({
             appId: '1237217742959497',
             version: 'v2.5' // or v2.0, v2.1, v2.2, v2.3
