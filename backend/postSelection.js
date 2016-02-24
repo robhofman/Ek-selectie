@@ -88,7 +88,19 @@ $(document).ready(function(){
       	dataType: 'json',                	//data format      
       	success: function(data)          	//on recieve of reply
       	{
-			console.log(data);
+			//console.log(data);
+
+
+			console.log(data[0].id);
+			console.log(data[0].totaal);
+
+			for(i = 0; i < data.length; i++){
+				console.log(data[i].id);
+				console.log(data[i].naam);
+				console.log(data[i].totaal);
+			}
+
+
       		
       		//console.log("Totaal aantal inzendingen: " + data[0]['totaal']);
             //
