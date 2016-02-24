@@ -108,7 +108,7 @@
                     speler = new Speler(statistics[i].spelernaam, 'gekozen', statistics[i].percentage);
                 }
                 else{
-                    speler = new Speler($scope.alleSpelers[i].spelernaam, "nietgekozen", statistics[i].percentage);
+                    speler = new Speler(statistics[i].spelernaam, "nietgekozen", statistics[i].percentage);
                 }
                 result.push(speler);
             }
