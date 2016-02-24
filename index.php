@@ -102,6 +102,7 @@ $resultA = $db->query($queryA);
 <script src="models/Speler.js"></script>
 <script src="app.js"></script>
 <script src="controllers/selectieController.js"></script>
+<script src="backend/share.js"></script>
 <button id="twittershare">Deel via twitter</button>
 <?php
 $resultGK->free();
