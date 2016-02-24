@@ -97,7 +97,7 @@ $(document).ready(function(){
 			for(i = 0; i < data.length; i++){
 				console.log(data[i].id);
 				console.log(data[i].naam);
-				console.log(data[i].totaal);
+				console.log(data[i].aantal);
 			}
 
 
