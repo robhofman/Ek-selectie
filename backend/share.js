@@ -11,11 +11,6 @@ function openWindow(url) {
 
 
 $(document).ready(function() {
-    console.log("ik wordt ingeladen");
-    $('#twittershare').click(function () {
-        openWindow('https://twitter.com/intent/tweet');
-    });
-
 
     window.fbAsyncInit = function() {
         FB.init({
@@ -32,4 +27,27 @@ $(document).ready(function() {
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
+
+
+
+    function myFacebookLogin() {
+        FB.login(function(){
+            // Note: The call will only work if you accept the permission request
+            FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+        }, {scope: 'publish_actions'});
+    }
+
+
+    console.log("ik wordt ingeladen");
+    $('#twittershare').click(function () {
+        openWindow('https://twitter.com/intent/tweet');
+    });
+
+
+    $('#facebookshare').click(function () {
+       myFacebookLogin();
+    });
+
+
+
 });
