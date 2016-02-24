@@ -120,8 +120,7 @@ $resultA = $db->query($queryA);
         js.src = "//connect.facebook.net/en_US/sdk.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-</script>
-<script>
+
     // Only works after `FB.init` is called
     function myFacebookLogin() {
         FB.login(function(){
