@@ -91,8 +91,6 @@ $(document).ready(function(){
 
 			var statistics = [];
 
-
-
 			for(i = 1; i < data.length; i++){
 				statistics.push((parseInt(data[i].aantal))/(parseInt(data[0].totaal)));
 			}
