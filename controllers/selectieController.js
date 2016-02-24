@@ -8,9 +8,9 @@
         $scope.aantalSpelers = 23;
         $scope.alleSpelers = [];
         $scope.aantalIsNietVoldoende = true;
-
+        $scope.resultLijst = [];
         $scope.selectie = [];
-
+        $scope.percentageLijst = [];
         var hoogteLijst = 0;
 
         var getAllPlayers = function(){
@@ -97,29 +97,21 @@
 
 
 
-        var bewaar = function(e){
-            //e.preventDefault();
-            ngDialog.close();
-            var allListItems = $('.speler');
-            var selectie = [];
-            var lengte = allListItems.length;
-            for (var i=0;  i<lengte; i++) {
-                if(allListItems[i].firstChild.checked == true) selectie.push(allListItems[i].firstChild.value);
-            }
-            if(selectie.length != 23){
-                alert("gelieve juist 23 spelers te selecteren, u heeft er "+selectie.length);
-            }
-            else{
-                $scope.selectie = selectie;
-                $scope.$apply();
-                luikVallen();
-                $("#btnWijzig").addClass("verborgen");
-                $("#btnBewaar").addClass("hidden");
-                $("#btnBekijkTeam").addClass("hidden");
-
+        var checkSpelersInSelectie = function(){
+            var length = statistics.length;
+            var result = [];
+            for(var i = 0; i<length; i++){
+                var speler;
+                if($scope.selectie.contains(statistics[i].spelernaam)){
+                    speler = new Speler(statistics[i].spelernaam, 'gekozen', statistics[i].percentage);
+                }
+                else{
+                    speler = new Speler($scope.alleSpelers[i].spelernaam, "nietgekozen", statistics[i].percentage);
+                }
+                result.push(speler);
+                $scope.percentageLijst = result;
             }
         };
-
 
         var bewaarPopUp = function(e){
             //e.preventDefault();
@@ -129,7 +121,9 @@
             var selectie = [];
             var lengte = allListItems.length;
             for (var i=0;  i<lengte; i++) {
-                if(allListItems[i].firstChild.checked == true) selectie.push(allListItems[i].firstChild.value);
+                if(allListItems[i].firstChild.checked == true){
+                    selectie.push(allListItems[i].firstChild.value);
+                }
             }
             if(selectie.length != 23){
                 alert("gelieve juist 23 spelers te selecteren, u heeft er "+selectie.length);
@@ -140,8 +134,7 @@
                 $("#btnWijzig").addClass("verborgen");
                 $("#btnBewaar").addClass("hidden");
                 $("#btnBekijkTeam").addClass("hidden");
-                var x = statistics;
-                console.log(x);
+                checkSpelersInSelectie();
             }
         };
 
@@ -160,7 +153,6 @@
                 duration: "slow",
                 easing: "easeOutBounce"
             });
-            var hoogteMetMarge = hoogte+16;
 
             b.animate({
                 height: hoogte+"px"
@@ -241,18 +233,6 @@
 
         };
 
-
-
-        var getTeam = function () {
-            $scope.selectie = [];
-            $("#gameSpace input:checked").each(function(){
-                var value = $(this).val();
-                $scope.$digest(function () {
-                    $scope.selectie.push(value);
-                });
-
-            });
-        };
 
 
         getAllPlayers();

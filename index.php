@@ -48,7 +48,7 @@ $resultA = $db->query($queryA);
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
                 <ul id="resultatenLijst">
-                    <li ng-repeat="speler in selectie">{{speler}}</li>
+                    <li ng-repeat="speler in percentageLijst" class="{{speler.gekozen}}">{{speler.naam}}</li>
                 </ul>
             </div>
             <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">
@@ -99,7 +99,7 @@ $resultA = $db->query($queryA);
 
 <script src="lib/angular.js"></script>
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>
-
+<script src="models/Speler.js"></script>
 <script src="app.js"></script>
 <script src="controllers/selectieController.js"></script>
 <?php

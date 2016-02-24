@@ -1,4 +1,5 @@
 var statistics = [];
+
 $(document).ready(function(){
 	console.log("ik wordt ingeladen");
 	$('#btnHidden').click(function(){
