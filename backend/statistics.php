@@ -20,18 +20,28 @@ if (mysqli_connect_errno()) {
 //
 //echo json_encode($json1);
 
-$spelers = array();
+$statistiekArray = array();
 
-$result = mysqli_query($mysqli, 'SELECT id, naam, aantal FROM selectiemaker_spelers');
+$result1 = mysqli_query($mysqli, 'SELECT id, naam, aantal FROM selectiemaker_spelers');
 
-while($row = mysqli_fetch_assoc($result)){
+while($row1 = mysqli_fetch_assoc($result1)){
 
 
-    array_push($spelers, $row);
+    array_push($statistiekArray, $row1);
     //echo $spelers;
 }
 
-echo json_encode($spelers);
+
+$result2 = mysqli_query($mysqli, 'SELECT id, totaal FROM selectiemaker_inzendingen');
+
+while($row2 = mysqli_fetch_assoc($result2)){
+
+
+    array_push($statistiekArray, $row2);
+    //echo $spelers;
+}
+
+echo json_encode($statistiekArray);
 
 
 ?>
