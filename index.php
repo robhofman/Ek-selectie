@@ -1,10 +1,27 @@
 <?php
 include 'backend/dbconnect.php';
 
-$sql = 'SELECT id, naam, aantal FROM selectiemaker_spelers';
-$result = $db->query($sql);
+//$sql = 'SELECT id, naam, aantal FROM selectiemaker_spelers';
+//$result = $db->query($sql);
+//
+//$rowCount = $result->num_rows;
 
-$rowCount = $result->num_rows;
+
+$queryGK = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="GK"';
+$resultGK = $db->query($queryGK);
+
+$queryV = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="V"';
+$resultV = $db->query($queryV);
+
+$queryM = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="M"';
+$resultM = $db->query($queryM);
+
+$queryA = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="A"';
+$resultA = $db->query($queryA);
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
@@ -41,12 +58,29 @@ $rowCount = $result->num_rows;
         </div>
         <div id="checkboxes">
             <div id="innerContainerCheckboxes">
+
             <?php
-                    echo '<ul id="lijstAlleSpelers">';
-                    while($row = $result->fetch_array(MYSQLI_BOTH)){
-                    echo '<li class="speler"><input type="checkbox" id="speler'.$row[0].'" name="speler'.$row[0].'" value="'.$row['naam'].'"><img src="img/'.$row['naam'].'.png"><i class="fa fa-check hidden"></i></li>';
-                    }
-                    echo '</ul>';
+            echo '<ul id="GK">';
+            while($row = $resultGK->fetch_array(MYSQLI_BOTH)){
+                echo '<li class="speler"><input type="checkbox" id="speler'.$row[0].'" name="speler'.$row[0].'" value="'.$row['naam'].'"><img src="img/'.$row['naam'].'.png"><i class="fa fa-check hidden"></i></li>';
+            }
+            echo '</ul>';
+            echo '<ul id="V">';
+            while($row = $resultV->fetch_array(MYSQLI_BOTH)){
+                echo '<li class="speler"><input type="checkbox" id="speler'.$row[0].'" name="speler'.$row[0].'" value="'.$row['naam'].'"><img src="img/'.$row['naam'].'.png"><i class="fa fa-check hidden"></i></li>';
+            }
+            echo '</ul>';
+            echo '<ul id="M">';
+            while($row = $resultM->fetch_array(MYSQLI_BOTH)){
+                echo '<li class="speler"><input type="checkbox" id="speler'.$row[0].'" name="speler'.$row[0].'" value="'.$row['naam'].'"><img src="img/'.$row['naam'].'.png"><i class="fa fa-check hidden"></i></li>';
+            }
+            echo '</ul>';
+            echo '<ul id="A">';
+            while($row = $resultA->fetch_array(MYSQLI_BOTH)){
+                echo '<li class="speler"><input type="checkbox" id="speler'.$row[0].'" name="speler'.$row[0].'" value="'.$row['naam'].'"><img src="img/'.$row['naam'].'.png"><i class="fa fa-check hidden"></i></li>';
+            }
+            echo '</ul>';
+
             ?>
             </div>
         </div>
