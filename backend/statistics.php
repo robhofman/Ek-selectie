@@ -22,22 +22,21 @@ if (mysqli_connect_errno()) {
 
 $statistiekArray = array();
 
-$result1 = mysqli_query($mysqli, 'SELECT id, naam, aantal FROM selectiemaker_spelers');
-
-while($row1 = mysqli_fetch_assoc($result1)){
-
-
-    array_push($statistiekArray, $row1);
-    //echo $spelers;
-}
-
-
 $result2 = mysqli_query($mysqli, 'SELECT id, totaal FROM selectiemaker_inzendingen');
 
 while($row2 = mysqli_fetch_assoc($result2)){
 
 
     array_push($statistiekArray, $row2);
+    //echo $spelers;
+}
+
+$result1 = mysqli_query($mysqli, 'SELECT id, naam, aantal FROM selectiemaker_spelers');
+
+while($row1 = mysqli_fetch_assoc($result1)){
+
+
+    array_push($statistiekArray, $row1);
     //echo $spelers;
 }
 
