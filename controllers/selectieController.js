@@ -123,6 +123,7 @@
 
         var bewaarPopUp = function(e){
             //e.preventDefault();
+            $("#btnHidden").click();
             ngDialog.close();
             var allListItems = $('.speler');
             var selectie = [];
@@ -215,7 +216,7 @@
                 $scope.$apply()
             }
 
-        }
+        };
 
         var init = function(){
             var submit = document.getElementById('btnBekijkTeam');
@@ -224,8 +225,8 @@
             var btnWijzig = document.getElementById("btnWijzig");
             btnWijzig.addEventListener("click", wijzig);
 
-            var btnBewaar = document.getElementById("btnBewaar");
-            btnBewaar.addEventListener("click", bewaar);
+            //var btnBewaar = document.getElementById("btnBewaar");
+            //btnBewaar.addEventListener("click", bewaar);
 
             var allListItems = document.getElementsByClassName('speler');
             for (var i=0;  i<allListItems.length; i++) {
