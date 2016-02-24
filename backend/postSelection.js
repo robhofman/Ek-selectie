@@ -94,7 +94,7 @@ $(document).ready(function(){
 
 
 			for(i = 1; i < data.length; i++){
-				statistics.push(data[i]/parseInt(data[0].totaal));
+				statistics.push((parseInt(data[i].aantal))/(parseInt(data[0].totaal)));
 			}
 
 			console.log(statistics);
