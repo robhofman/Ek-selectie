@@ -1,14 +1,11 @@
 $(document).ready(function(){
 	console.log("ik wordt ingeladen");
-	$('#btnBewaar').click(function(){
+	$('#btnBewaarPopup').click(function(){
 			console.log("klik btnBewaar");
 			var selected = [];
 			$('#checkboxes input:checked').each(function() {
     		selected.push($(this).attr('value'));
     		console.log(selected);
-
-
-		
 		});
 
 		$.ajax({
@@ -46,7 +43,6 @@ $(document).ready(function(){
 			},
 			error: function(data){
 				alert("fail");
-
 			}
 		});
 
@@ -89,16 +85,22 @@ $(document).ready(function(){
       	success: function(data)          	//on recieve of reply
       	{
 			//console.log(data);
-
-
-			console.log(data[0].id);
+			// 			console.log(data[0].id);
 			console.log(data[0].totaal);
 
-			for(i = 0; i < data.length; i++){
-				console.log(data[i].id);
-				console.log(data[i].naam);
-				console.log(data[i].aantal);
+
+			var statistics = [];
+
+
+
+			for(i = 1; i < data.length; i++){
+				statistics.push(data[i]/parseInt(data[0].totaal));
 			}
+
+			console.log(statistics);
+
+
+
 
 
       		
