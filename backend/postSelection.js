@@ -90,8 +90,6 @@ $(document).ready(function(){
 			console.log(data[0].totaal);
 
 
-
-
 			for(i = 1; i < data.length; i++){
 				var obj = {};
 

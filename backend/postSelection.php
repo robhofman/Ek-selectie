@@ -59,10 +59,6 @@ foreach($postArray as $value){
             $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Vincent Kompany'";
             if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
             break;
-        case 'Sven Kums':
-            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Sven Kums'";
-            if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
-            break;
         case 'Nicolas Lombaerts':
             $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Nicolas Lombaerts'";
             if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
