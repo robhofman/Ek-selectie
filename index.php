@@ -83,7 +83,7 @@ $resultA = $db->query($queryA);
     <div>
         <button class="sporzaButton" id="btnBekijkTeam" >Bekijk je selectie</button>
         <button class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >Wijzig je team</button>
-        <button class="sporzaButton hidden" id="btnHidden" value="wijzig je team" onclick="alert('yolo')">Wijzig je team</button>
+        <button class="sporzaButton hidden" id="btnHidden" value="wijzig je team" >Wijzig je team</button>
 
     </div>
     <button id="btnSelecteer23">selecteer 23 spelers</button>
