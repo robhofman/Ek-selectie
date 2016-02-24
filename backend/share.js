@@ -12,21 +12,15 @@ function openWindow(url) {
 
 $(document).ready(function() {
 
-    window.fbAsyncInit = function() {
+    $.ajaxSetup({ cache: true });
+    $.getScript('https://connect.facebook.net/en_US/sdk.js', function(){
         FB.init({
-            appId      : 'your-app-id',
-            xfbml      : true,
-            version    : 'v2.5'
+            appId: '1237217742959497',
+            version: 'v2.5' // or v2.0, v2.1, v2.2, v2.3
         });
-    };
-
-    (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+        //$('#loginbutton,#feedbutton').removeAttr('disabled');
+        FB.getLoginStatus(updateStatusCallback);
+    });
 
 
 
