@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	console.log("ik wordt ingeladen");
-	$('#btnBewaarPopup').click(function(){
+	$('#btnHidden').click(function(){
 			console.log("klik btnBewaar");
 			var selected = [];
 			$('#checkboxes input:checked').each(function() {
@@ -74,7 +74,7 @@ $(document).ready(function(){
 		//});
 
 		
-		$('#btnBewaar').hide();
+		//$('#btnBewaar').hide();
 		alert("Uw selectie is succesvol verzonden");
 
 		$.ajax({
