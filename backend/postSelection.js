@@ -127,7 +127,8 @@ $(document).ready(function(){
         	//var percentageLaurentDepoitre = Math.round(c*100));
 
         	//apend values to output (popup)	
-      	} 
+		},
+			async: false
     });	
 	});
 });
