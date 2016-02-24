@@ -140,6 +140,10 @@ li>img{
 
 }
 
+.nietgekozen{
+    opacity: 0.75;
+}
+
 #innerContainerCheckboxes{
     margin-left: auto;
     margin-right: auto;

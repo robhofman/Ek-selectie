@@ -101,10 +101,10 @@
             var length = statistics.length;
             var result = [];
             for(var i = 0; i<length; i++){
-                var speler = "";
+                var speler;
                 var naam = statistics[i].spelernaam;
                 console.log(naam);
-                if($scope.selectie.contains(statistics[i].spelernaam)){
+                if($.inArray(naam, $scope.selectie)){
                     speler = new Speler(statistics[i].spelernaam, 'gekozen', statistics[i].percentage);
                 }
                 else{
