@@ -95,7 +95,7 @@ $(document).ready(function(){
 				var obj = {};
 
 				obj.spelernaam = data[i].naam;
-				obj.percentage = (parseInt(data[i].aantal))/(parseInt(data[0].totaal));
+				obj.percentage = (Math.round(parseInt(data[i].aantal))/(parseInt(data[0].totaal)*100));
 
 				statistics.push(obj);
 			}
