@@ -32,3 +32,17 @@ function initFacebookSDK () {
     // Insert the Facebook JS SDK into the DOM
     firstScriptElement.parentNode.insertBefore(facebookJS, firstScriptElement);
 }
+
+function postToFB() {
+    if (facebookReady) {
+        //FB.ui({
+        //    method: 'feed',
+        //    link: config.redirectUrl,
+        //    picture: basePath + 'screenshot.jpg',
+        //    name: config.title,
+        //    caption: config.subtitle,
+        //    description: config.shareIntroFB +": opstelling "+ selectedFormationString +" met "+ generatePlayersString()
+        //}, function(response){});
+        FB.api('/me/feed', 'post', {message: 'Hello, world!'});
+    }
+}
