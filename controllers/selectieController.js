@@ -51,7 +51,7 @@
         var selectInnerCheckbox = function(){
             if(this.firstChild.checked == true){
                 this.firstChild.checked = false;
-                $(this).find("i").addClass("hidden");
+                $(this).find(".check").addClass("hidden");
                 $(this).removeClass('checked');
                 /*$scope.$apply(function (){
                         $scope.aantalSpelers = $scope.aantalSpelers + 1;
@@ -64,7 +64,7 @@
             else{
                 this.firstChild.checked = true;
                 $(this).addClass("checked");
-                $(this).find("i").removeClass("hidden");
+                $(this).find(".check").removeClass("hidden");
                 /*$scope.$apply(function(){
                     $scope.aantalSpelers = $scope.aantalSpelers - 1;
 
@@ -150,7 +150,7 @@
             $("#canvasLuik").css({height: hoogte }).removeClass("hidden");
             var b = $("#luikBackground");
 
-            b.css({"margin-top": "-16px" });
+            //b.css({"margin-top": "-16px" });
 
             t.animate({
                 top: hoogte+"px"
@@ -210,7 +210,7 @@
             for (var i=0;  i<23; i++) {
                 allListItems[i].firstChild.checked = true;
                 $(allListItems[i]).addClass("checked");
-                $(allListItems[i]).find("i").removeClass("hidden");
+                $(allListItems[i]).find(".check").removeClass("hidden");
                 $scope.aantalSpelers = 0;
                 $scope.$apply()
             }

@@ -20,6 +20,10 @@ main{
     display: none !important;
 }
 
+#gameSpace h1{
+    width: 670px;
+}
+
 .verborgen{
     visibility: hidden !important;
 }
@@ -107,7 +111,7 @@ li>img{
     overflow: auto;
     overflow-x: hidden;
     width: 102%;
-    padding-bottom: 16px;
+    margin-top: 0;
 }
 #resultatenLijst>li{
     width: 98%;
@@ -116,11 +120,12 @@ li>img{
 
 }
 
-.speler .fa-check{
+.speler .check{
     position: absolute;
     top: 0;
     right: 0;
-    color: #b01124;
+    color: #066862;
+    text-shadow: 4px 4px 10px #333333;
     font-size: 2em;
     margin: -10px;
 }
@@ -132,4 +137,37 @@ li>img{
 #innerContainerCheckboxes{
     margin-left: auto;
     margin-right: auto;
+}
+
+
+
+@media screen and (max-device-width: 600px), screen and (max-width: 600px){
+    main, #canvasLuik, #gameSpace, #checkboxes{
+        width: 100%;
+    }
+
+    #lijstAlleSpelers{
+        padding: 10px;
+    }
+
+    #lijstAlleSpelers li{
+        width: 23%;
+        margin: 1%;
+    }
+
+    #lijstAlleSpelers>li>img{
+        width: 100%;
+    }
+    .ngdialog.ngdialog-theme-default .ngdialog-content {
+
+        margin: 0 auto !important;
+    }
+    #gameSpace>h1{
+        width: 100%;
+    }
+
+    #gameBody{
+        margin: 0;
+        padding: 0;
+    }
 }

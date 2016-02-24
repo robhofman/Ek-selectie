@@ -19,7 +19,7 @@ $rowCount = $result->num_rows;
 
     <title>Wie gaat mee naar Frankrijk</title>
 </head>
-<body>
+<body id="gameBody">
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="backend/postSelection.js"></script>
 <main id="gameSpace" ng-controller="selectieController">
@@ -44,7 +44,7 @@ $rowCount = $result->num_rows;
             <?php
                     echo '<ul id="lijstAlleSpelers">';
                     while($row = $result->fetch_array(MYSQLI_BOTH)){
-                    echo '<li class="speler"><input type="checkbox" id="speler'.$row[0].'" name="speler'.$row[0].'" value="'.$row['naam'].'"><img src="img/'.$row['naam'].'.png"><i class="fa fa-check hidden"></i></li>';
+                    echo '<li class="speler"><input type="checkbox" id="speler'.$row[0].'" name="speler'.$row[0].'" value="'.$row['naam'].'"><img src="img/'.$row['naam'].'.png"><img src="img/logo-RD.png" class="check hidden"></i></li>';
                     }
                     echo '</ul>';
             ?>
