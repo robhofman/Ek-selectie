@@ -35,8 +35,8 @@ foreach($postArray as $value){
             $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Steven Defour'";
             if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
             break;
-        case 'Moussa Dembele':
-            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Moussa Dembele'";
+        case 'Moussa Dembélé':
+            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Moussa Dembélé'";
             if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
             break;
         case 'Jason Denayer':
@@ -47,8 +47,8 @@ foreach($postArray as $value){
             $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Laurent Depoitre'";
             if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
             break;
-        case 'Jean-Francois Gillet':
-            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Jean-Francois Gillet'";
+        case 'Jean-François Gillet':
+            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Jean-François Gillet'";
             if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
             break;
         case 'Eden Hazard':
