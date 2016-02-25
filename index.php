@@ -106,7 +106,11 @@ $resultA = $db->query($queryA);
 <script src="app.js"></script>
 <script src="controllers/selectieController.js"></script>
 <script src="backend/share.js"></script>
-<button id="facebookshare">Deel via Facebook</button>
+<div class="fb-share-button"
+     data-href="http://www.your-domain.com/your-page.html"
+     data-layout="button_count">
+</div>
+<script src="js/facebookLoad.js" type="text/javascript"></script>
 <button id="twittershare">Deel via twitter</button>
 <?php
 $resultGK->free();
