@@ -7,7 +7,7 @@ $(document).ready(function(){
 			var selected = [];
 			$('#checkboxes input:checked').each(function() {
     		selected.push($(this).attr('value'));
-    		console.log(selected);
+    		//console.log(selected);
 		});
 
 		$.ajax({
@@ -40,7 +40,7 @@ $(document).ready(function(){
 			},
 				//selected,
 			success: function(data) {
-				console.log(data);
+				//console.log(data);
 				//alert(data[1]);
 			},
 			error: function(data){
@@ -88,7 +88,7 @@ $(document).ready(function(){
       	{
 			//console.log(data);
 			// 			console.log(data[0].id);
-			console.log(data[0].totaal);
+			//console.log(data[0].totaal);
 
 
 			for(i = 1; i < data.length; i++){
@@ -100,7 +100,7 @@ $(document).ready(function(){
 				statistics.push(obj);
 			}
 
-			 console.log(statistics);
+			 //console.log(statistics);
 
 
 

@@ -104,7 +104,7 @@
                 var speler;
                 var naam = statistics[i].spelernaam;
                 console.log(naam);
-                if($.inArray(naam, $scope.selectie)){
+                if($.inArray(naam, $scope.selectie)>-1){
                     speler = new Speler(statistics[i].spelernaam, 'gekozen', statistics[i].percentage);
                 }
                 else{
@@ -145,6 +145,10 @@
             //$("#canvasLuik").removeClass("hidden");
             var t = $("#trein");
             var hoogte = $("#checkboxes").height();
+            var windowhoogte =$(window).height()
+            if(hoogte > windowhoogte){
+                hoogte = windowhoogte;
+            }
             $("#canvasLuik").css({height: hoogte }).removeClass("hidden");
             var b = $("#luikBackground");
 

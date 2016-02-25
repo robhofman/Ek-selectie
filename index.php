@@ -27,6 +27,7 @@ $resultA = $db->query($queryA);
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="node_modules/ng-dialog/css/ngDialog.css">
@@ -48,7 +49,9 @@ $resultA = $db->query($queryA);
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
                 <ul id="resultatenLijst">
-                    <li ng-repeat="speler in percentageLijst" class="{{speler.gekozen}}">{{speler.naam}}</li>
+                    <li ng-repeat="speler in percentageLijst" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
+                        <span class="percent">{{speler.percentage}}%</span>
+                    </li>
                 </ul>
             </div>
             <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">

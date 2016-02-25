@@ -141,7 +141,19 @@ li>img{
 }
 
 .nietgekozen{
-    opacity: 0.75;
+    opacity: 0.5;
+}
+
+.spelernaam{
+    width: 60%;
+    display: inline;
+}
+
+.percent{
+    float: right;
+    right: 90px;
+    display: inline;
+    position: absolute;
 }
 
 #innerContainerCheckboxes{
@@ -160,10 +172,15 @@ li>img{
         padding: 10px;
     }
 
-    #GK>li, #V>li, #M>li #A>li{
+    #GK>li, #V>li{
         width: 23%;
         margin: 1%;
     }
+    #M>li, #A>li{
+        width: 23%;
+        margin: 1%;
+    }
+
 
     #GK>li>img:nth-child(2), #V>li>img:nth-child(2), #M>li>img:nth-child(2), #A>li>img:nth-child(2){
         width: 100%;
@@ -171,6 +188,7 @@ li>img{
     .ngdialog.ngdialog-theme-default .ngdialog-content {
 
         margin: 0 auto !important;
+        width: 100%;
     }
     #gameSpace>h1{
         width: 100%;
@@ -180,4 +198,8 @@ li>img{
         margin: 0;
         padding: 0;
     }
+    .percent{
+        right: 15px;
+    }
+
 }
