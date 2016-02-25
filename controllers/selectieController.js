@@ -144,6 +144,7 @@
         var luikVallen = function () {
             //$("#canvasLuik").removeClass("hidden");
             window.scrollTo($("#gameSpace"), { duration: 0});
+            $(".aantal").addClass("hidden");
             var t = $("#trein");
             var hoogte = $("#checkboxes").height();
             var windowhoogte =$(window).height();
@@ -187,7 +188,7 @@
                         $(this).css('-moz-transform','rotate('+now+'deg)');
                         $(this).css('transform','rotate('+now+'deg)');
                     },
-                    duration: 2500
+                    duration: 3500
                 });
                 /*t.animate({  borderSpacing: 30 }, {
                     step: function(now,fx) {
