@@ -29,7 +29,7 @@ while($row2 = mysqli_fetch_assoc($result2)){
     //echo $spelers;
 }
 
-$result1 = mysqli_query($mysqli, 'SELECT id, naam, aantal FROM selectiemaker_spelers');
+$result1 = mysqli_query($mysqli, 'SELECT id, naam, aantal FROM selectiemaker_spelers ORDER BY aantal DESC');
 
 while($row1 = mysqli_fetch_assoc($result1)){
     array_push($statistiekArray, $row1);
