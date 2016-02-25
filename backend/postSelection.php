@@ -36,7 +36,7 @@ foreach($postArray as $value){
             if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
             break;
         case 'Moussa Dembele':
-            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Moussa Dembélé'";
+            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Moussa Dembele'";
             if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
             break;
         case 'Jason Denayer':
@@ -189,6 +189,22 @@ foreach($postArray as $value){
             break;
         case 'Bjorn Engels':
             $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Bjorn Engels'";
+            if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
+            break;
+        case 'Nana Asare':
+            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Nana Asare'";
+            if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
+            break;
+        case 'Marouane Fellaini':
+            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Marouane Fellaini'";
+            if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
+            break;
+        case 'Divock Origi':
+            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Divock Origi'";
+            if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
+            break;
+        case 'Adnan Januzaj':
+            $sql = "UPDATE selectiemaker_spelers SET aantal=aantal+1 WHERE naam='Adnan Januzaj'";
             if ($db->query($sql) === TRUE) { echo "Record updated successfully"; } else { echo "Error updating record: " . $db->error; }
             break;
         default:
