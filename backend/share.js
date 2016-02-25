@@ -39,7 +39,7 @@ $(document).ready(function() {
 
 
     $('#facebookshare').click(function () {
-       myFacebookLogin();
+        openWindow('https://facebook.com/sharer.php?');
     });
 
 
