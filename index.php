@@ -54,7 +54,7 @@ $resultA = $db->query($queryA);
                     </li>
                 </ul>
             </div>
-            <img src="img/Trein_Red_Devils.png" alt="treintje" id="trein">
+            <img src="img/plane.png" alt="treintje" id="trein">
         </div>
         <div id="checkboxes">
             <div id="innerContainerCheckboxes">
@@ -99,7 +99,7 @@ $resultA = $db->query($queryA);
     <input type="button" ng-click="wijzig()" value="Wijzig" class="sporzaButton" id="btnWijzigPopup">
 </script>
 <script src="lib/jquery-ui.js"></script>
-
+<script src="js/disableDoubleTap.js"></script>
 <script src="lib/angular.js"></script>
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>
 <script src="models/Speler.js"></script>

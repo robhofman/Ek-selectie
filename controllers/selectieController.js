@@ -143,40 +143,62 @@
 
         var luikVallen = function () {
             //$("#canvasLuik").removeClass("hidden");
+            window.scrollTo($("#gameSpace"), { duration: 0});
             var t = $("#trein");
             var hoogte = $("#checkboxes").height();
-            var windowhoogte =$(window).height()
+            var windowhoogte =$(window).height();
+            var relevanteHoogte;
             if(hoogte > windowhoogte){
-                hoogte = windowhoogte;
+                relevanteHoogte = windowhoogte;
             }
-            $("#canvasLuik").css({height: hoogte }).removeClass("hidden");
+            else{
+                relevanteHoogte = hoogte + 16;
+            }
+            $("#canvasLuik").css({height: relevanteHoogte }).removeClass("hidden");
             var b = $("#luikBackground");
 
             //b.css({"margin-top": "-16px" });
 
             t.animate({
-                top: hoogte+"px"
+                top: relevanteHoogte/2+"px"
             }, {
                 duration: "slow",
                 easing: "easeOutBounce"
             });
 
             b.animate({
-                height: hoogte+"px"
+                height: relevanteHoogte+"px"
             },{
                 duration: "slow",
                 easing: "easeOutBounce"
             });
 
-
+            $("#checkboxes").addClass("hidden");
 
             setTimeout(function(){
                 t.animate({
-                    left: -700+"px"
+                    left: -700+"px",
+                    top: -700+"px",
+                    borderSpacing: 30
+
                 },{
-                    duration: 2000
+                    step: function(now,fx) {
+                        $(this).css('-webkit-transform','rotate('+now+'deg)');
+                        $(this).css('-moz-transform','rotate('+now+'deg)');
+                        $(this).css('transform','rotate('+now+'deg)');
+                    },
+                    duration: 2500
                 });
+                /*t.animate({  borderSpacing: 30 }, {
+                    step: function(now,fx) {
+                        $(this).css('-webkit-transform','rotate('+now+'deg)');
+                        $(this).css('-moz-transform','rotate('+now+'deg)');
+                        $(this).css('transform','rotate('+now+'deg)');
+                    },
+                    duration:2000
+                },'linear');*/
             }, 1000);
+
 
             setTimeout(function(){ showResultList(hoogte);}, 1000);
 

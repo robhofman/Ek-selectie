@@ -52,8 +52,8 @@ li>img{
     width: 630px;
     height: auto;
     position: absolute;
-    margin-top: -300px;
-    right: 30px;
+    margin-top: 250px;
+    left: 700px;
     z-index: 51;
 }
 
@@ -99,7 +99,7 @@ li>img{
     width: 670px;
     height: 0;
     background-color: #066862;
-    overflow: hidden;
+    overflow: scroll;
 
 }
 
@@ -109,8 +109,7 @@ li>img{
     color: white;
     opacity: 0;
     height: 100%;
-    overflow: auto;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     width: 102%;
     margin-top: 0;
 }
