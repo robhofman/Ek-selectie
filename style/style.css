@@ -61,7 +61,7 @@ li>img{
 #canvasLuik{
 
     position: absolute;
-    overflow: hidden;
+    /*overflow: hidden;*/
     width: 670px;
     padding: 0;
     z-index: 40;
@@ -100,8 +100,8 @@ li>img{
     width: 670px;
     height: 0;
     background-color: #066862;
-    overflow: scroll;
-    overflow-x: hidden;
+    /*overflow: hidden;*/
+    /*overflow-x: hidden;*/
 }
 
 #resultatenLijst{
@@ -111,12 +111,13 @@ li>img{
     opacity: 0;
     height: 100%;
     /*overflow-x: hidden;*/
-    width: 102%;
+    width: 100%;
+    background-color: #066862;
     margin-top: 0;
 }
 #resultatenLijst>li{
     width: 50%;
-    padding-top: 20px;
+    padding-top: 10px;
     position: relative;
     float: left;
 }
@@ -208,5 +209,8 @@ li>img{
     }
     #gameSpace h1{
         max-width: 100%;
+    }
+    #luikBackground{
+        overflow: auto;
     }
 }
