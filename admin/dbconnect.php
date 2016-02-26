@@ -18,6 +18,6 @@ if (mysqli_connect_errno()) {
     die ('Could not open a mysql connection: '.mysqli_connect_error().'('.mysqli_connect_errno().')');
 }
 
-echo "connectione";
+
 
 ?>
