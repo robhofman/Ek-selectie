@@ -1,15 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Access Denied</title>
-<link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <title>Access Denied</title>
 </head>
 <body>
 <p>&nbsp;</p>
-<div id="log">
-<h4 align="center" class="err">Access Denied!</h4>
+<h4 align="center">Access Denied!</h4>
 <p align="center">Click here to <a href="index.php">Login</a></p>
-</div>
 </body>
 </html>
