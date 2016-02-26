@@ -20,6 +20,7 @@ main{
 
 #gameSpace h1{
     width: 670px;
+    color: #fff;
 }
 
 .verborgen{
@@ -204,5 +205,8 @@ li>img{
 
     #resultatenLijst>li{
         width: 100%;
+    }
+    #gameSpace h1{
+        max-width: 100%;
     }
 }
