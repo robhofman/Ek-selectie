@@ -42,12 +42,12 @@ $resultA = $db->query($queryA);
 <script src="backend/postSelection.js"></script>
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
-    <h1>Welke 23 duivels zet jij op de Thalys naar het EK?</h1>
     <h2 ng-bind="aantalSpelers" class="aantal"></h2>
 
     <!--<form action="php/post.php" method="post">-->
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
+                <h1>Bedankt voor uw deelname! reeds 6000 mensen gaven hun selectie door.</h1>
                 <ul id="resultatenLijst">
                     <li ng-repeat="speler in percentageLijst" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
                         <span class="percent">{{speler.percentage}}%</span>
@@ -90,7 +90,7 @@ $resultA = $db->query($queryA);
 
     </div>
     <button id="btnSelecteer23">selecteer 23 spelers</button>
-
+    <button id="shareFb"></button>
 
 </main>
 <script type="text/ng-template" id="testTemplate">
@@ -104,13 +104,15 @@ $resultA = $db->query($queryA);
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>
 <script src="models/Speler.js"></script>
 <script src="app.js"></script>
+<script src="js/facebookLoad.js" type="text/javascript"></script>
+<script src="js/facebook.js"></script>
 <script src="controllers/selectieController.js"></script>
 <script src="backend/share.js"></script>
 <div class="fb-share-button"
-     data-href="http://www.your-domain.com/your-page.html"
+     data-href="http://www.goudenduivels.sporzalb/selectiemaker/lijst"
      data-layout="button_count">
 </div>
-<script src="js/facebookLoad.js" type="text/javascript"></script>
+
 <button id="twittershare">Deel via twitter</button>
 <?php
 $resultGK->free();

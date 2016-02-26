@@ -70,7 +70,7 @@ li>img{
 
 .aantal{
     text-align: right;
-
+    margin-right: 40px;
 
 }
 
@@ -100,7 +100,7 @@ li>img{
     height: 0;
     background-color: #066862;
     overflow: scroll;
-
+    overflow-x: hidden;
 }
 
 #resultatenLijst{
@@ -114,11 +114,10 @@ li>img{
     margin-top: 0;
 }
 #resultatenLijst>li{
-    width: 98%;
-    text-align: center;
-    padding: 10px;
+    width: 50%;
+    padding-top: 20px;
     position: relative;
-
+    float: left;
 }
 
 .speler .check{
@@ -147,11 +146,12 @@ li>img{
 .spelernaam{
     width: 60%;
     display: inline;
+    margin-left: 15px;
 }
 
 .percent{
     float: right;
-    right: 90px;
+    right: 30px;
     display: inline;
     position: absolute;
 }
@@ -202,4 +202,7 @@ li>img{
         right: 15px;
     }
 
+    #resultatenLijst>li{
+        width: 100%;
+    }
 }

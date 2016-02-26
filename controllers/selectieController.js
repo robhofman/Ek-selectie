@@ -48,7 +48,15 @@
             });
         };
 
+        var openPopupTeVeel = function () {
+            ngDialog.open({
+                template: "teVeelSpelers.html"
+
+            });
+        };
+
         var selectInnerCheckbox = function(){
+            //speler is reeds geselecteerd => ontchecken
             if(this.firstChild.checked == true){
                 this.firstChild.checked = false;
                 $(this).find(".check").addClass("hidden");
@@ -61,7 +69,13 @@
                 $scope.$apply();
 
             }
+
+            //nieuwe speler => checken
             else{
+                if($scope.aantalSpelers == 0){
+                    openPopup();
+                    return;
+                }
                 this.firstChild.checked = true;
                 $(this).addClass("checked");
                 $(this).find(".check").removeClass("hidden");
@@ -78,7 +92,7 @@
 
         var hideOthers  = function(e){
             e.preventDefault();
-            hoogteLijst = $("#lijstAlleSpelers").height();
+            hoogteLijst = $("#checkboxes").height();
 
             $("#btnBekijkTeam").addClass("hidden");
             var allListItems = $('.speler');
@@ -87,7 +101,7 @@
                 if(item.checked == false) $(allListItems[i]).addClass("hidden");
             }
 
-            $("#lijstAlleSpelers").css({height: hoogteLijst});
+            $("#checkboxes").css({height: hoogteLijst});
             //this.className += 'hidden';
             $("#btnWijzig").removeClass("hidden");
             $("#btnBewaar").removeClass("hidden");
@@ -188,7 +202,7 @@
                         $(this).css('-moz-transform','rotate('+now+'deg)');
                         $(this).css('transform','rotate('+now+'deg)');
                     },
-                    duration: 3500
+                    duration: 5000
                 });
                 /*t.animate({  borderSpacing: 30 }, {
                     step: function(now,fx) {
@@ -260,6 +274,8 @@
             btnSelecteer23.addEventListener("click", selecteer23);
 
             //setTimeout(function(){luikVallen();}, 1000);
+            var btnfb = document.getElementById("shareFb");
+            btnfb.addEventListener("click", intifb);
 
         };
 
