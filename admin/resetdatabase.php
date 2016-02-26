@@ -6,7 +6,7 @@
  * Time: 14:49
  */
 
-include 'opendb.php';
+include 'dbconnect.php';
 
 $sql = "UPDATE selectiemaker_inzendingen SET totaal=0";
 if ($conn->query($sql) === TRUE) { echo "Totaal aantal inzendingen gereset \n"; } else { echo "Error updating record: " . $conn->error; }
@@ -14,6 +14,7 @@ if ($conn->query($sql) === TRUE) { echo "Totaal aantal inzendingen gereset \n"; 
 
 $sql2 = "UPDATE selectiemaker_spelers SET aantal=0";
 if ($conn->query($sql2) === TRUE) { echo "Alle spelers gereset \n"; } else { echo "Error updating record: " . $conn->error; }
+
 
 
 ?>
