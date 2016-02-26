@@ -11,7 +11,13 @@
         $scope.resultLijst = [];
         $scope.selectie = [];
         $scope.percentageLijst = [];
+        $scope.urlToShare = "";
         var hoogteLijst = 0;
+
+
+        var getUrlToShare = function () {
+
+        };
 
         var getAllPlayers = function(){
             var main = document.getElementById("gameSpace");
@@ -48,12 +54,6 @@
             });
         };
 
-        var openPopupTeVeel = function () {
-            ngDialog.open({
-                template: "teVeelSpelers.html"
-
-            });
-        };
 
         var selectInnerCheckbox = function(){
             //speler is reeds geselecteerd => ontchecken
