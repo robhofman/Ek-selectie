@@ -56,7 +56,9 @@
         };
 
 
+
         var openPopup = function () {
+
             ngDialog.open({
                 template: 'testTemplate',
                 scope: $scope
@@ -180,15 +182,7 @@
                 $("#btnBekijkTeam").addClass("hidden");
                 checkSpelersInSelectie();
                 getUrlToShare($scope.selectie);
-                var fb = document.getElementById("fbButton");
-                fb.addEventListener("click", function intifb(){
-                        FB.ui({
-                            method: 'share',
-                            link: $scope.spelers,
-                            caption: 'An example caption'
-                        }, function(response){});
-                    }
-                );
+
 
             }
         };

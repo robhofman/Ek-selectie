@@ -42,7 +42,9 @@ $resultA = $db->query($queryA);
 <script src="backend/postSelection.js"></script>
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
-    <h2 ng-bind="aantalSpelers" class="aantal"></h2>
+    <div id="header">
+        <h2 ng-bind="aantalSpelers" class="aantal"></h2>
+    </div>
 
     <!--<form action="php/post.php" method="post">-->
         <div id="canvasLuik" class="hidden">
@@ -55,14 +57,7 @@ $resultA = $db->query($queryA);
                     </li>
 
                 </ul>
-                <--<div>
-                    <p>deel je score:</p>
-                    <button id="twittershare">Deel via twitter</button>
-                    <button id="fbButton">facebook</button>
-                    <div class="fb-share-button"
-                         data-href="{{urlToShare}}"
-                         data-layout="button_count">
-                    </div>
+
 
                 </div>
             </div>
@@ -95,7 +90,7 @@ $resultA = $db->query($queryA);
             ?>
             </div>
         </div>
-    <div>
+    <div id="buttonsDiv">
         <button class="sporzaButton" id="btnBekijkTeam" >Bekijk je selectie</button>
         <button class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >Wijzig je team</button>
         <button class="sporzaButton hidden" id="btnHidden" value="wijzig je team" >Wijzig je team</button>
