@@ -78,6 +78,7 @@ li>img{
 .ngdialog.ngdialog-theme-default .ngdialog-content {
 
     margin: 150px 110px !important;
+    position: absolute;
 }
 
 .sporzaButton{

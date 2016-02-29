@@ -12,11 +12,20 @@
         $scope.selectie = [];
         $scope.percentageLijst = [];
         $scope.urlToShare = "";
+        $scope.aantalDeelnames = 0;
         var hoogteLijst = 0;
 
 
-        var getUrlToShare = function () {
-
+        var getUrlToShare = function (spelers) {
+            var lengte = spelers.length;
+            var urleerstedeel = window.location.href+"/overview.php";
+            var urlTweedeDeel = "?";
+            for(var i=0; i<lengte; i++){
+                var speler = spelers[i];
+                urlTweedeDeel +="player"+i+"="+ speler;
+                if(i!=lengte-1)urlTweedeDeel +="&";
+            }
+            $scope.urlToShare = urleerstedeel + encodeURIComponent(urlTweedeDeel.trim());
         };
 
         var getAllPlayers = function(){
@@ -111,6 +120,10 @@
 
 
 
+        var aantalInzendingenOphalen = function(){
+            $scope.aantalDeelnames = totaalAantalInzendingen;
+        };
+
         var checkSpelersInSelectie = function(){
             var length = statistics.length;
             var result = [];
@@ -140,6 +153,7 @@
                 result.push(speler);
             }
             $scope.percentageLijst = result;
+            aantalInzendingenOphalen();
 
         };
 
@@ -165,6 +179,17 @@
                 $("#btnBewaar").addClass("hidden");
                 $("#btnBekijkTeam").addClass("hidden");
                 checkSpelersInSelectie();
+                getUrlToShare($scope.selectie);
+                var fb = document.getElementById("fbButton");
+                fb.addEventListener("click", function intifb(){
+                        FB.ui({
+                            method: 'share',
+                            link: $scope.spelers,
+                            caption: 'An example caption'
+                        }, function(response){});
+                    }
+                );
+
             }
         };
 
@@ -287,8 +312,7 @@
             btnSelecteer23.addEventListener("click", selecteer23);
 
             //setTimeout(function(){luikVallen();}, 1000);
-            var btnfb = document.getElementById("shareFb");
-            btnfb.addEventListener("click", intifb);
+
 
         };
 

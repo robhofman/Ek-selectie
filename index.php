@@ -47,12 +47,24 @@ $resultA = $db->query($queryA);
     <!--<form action="php/post.php" method="post">-->
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
-                <h1>Bedankt voor uw deelname! reeds 6000 mensen gaven hun selectie door.</h1>
+                <h1>Bedankt voor uw deelname! reeds {{aantalDeelnames}} mensen gaven hun selectie door.</h1>
                 <ul id="resultatenLijst">
                     <li ng-repeat="speler in percentageLijst" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
                         <span class="percent">{{speler.percentage}}%</span>
+
                     </li>
+
                 </ul>
+                <--<div>
+                    <p>deel je score:</p>
+                    <button id="twittershare">Deel via twitter</button>
+                    <button id="fbButton">facebook</button>
+                    <div class="fb-share-button"
+                         data-href="{{urlToShare}}"
+                         data-layout="button_count">
+                    </div>
+
+                </div>
             </div>
             <img src="img/plane.png" alt="treintje" id="trein">
         </div>
@@ -90,7 +102,6 @@ $resultA = $db->query($queryA);
 
     </div>
     <button id="btnSelecteer23">selecteer 23 spelers</button>
-    <button id="shareFb"></button>
 
 </main>
 <script type="text/ng-template" id="testTemplate">
@@ -108,12 +119,11 @@ $resultA = $db->query($queryA);
 <script src="js/facebook.js"></script>
 <script src="controllers/selectieController.js"></script>
 <script src="backend/share.js"></script>
-<div class="fb-share-button"
-     data-href="http://www.goudenduivels.sporzalb/selectiemaker/lijst"
-     data-layout="button_count">
-</div>
 
-<button id="twittershare">Deel via twitter</button>
+
+
+
+
 <?php
 $resultGK->free();
 $resultV->free();
