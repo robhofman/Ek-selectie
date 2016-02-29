@@ -40,7 +40,8 @@ $(document).ready(function(){
 			},
 			error: function(data){
 				alert("fail");
-			}
+			},
+			async: false
 		});
 
 		$.ajax({

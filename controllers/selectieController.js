@@ -117,8 +117,21 @@
             for(var i = 0; i<length; i++){
                 var speler;
                 var naam = statistics[i].spelernaam;
-                console.log(naam);
+                //console.log(naam);
                 if($.inArray(naam, $scope.selectie)>-1){
+
+
+                    //accentcontrole
+                    if(statistics[i].spelernaam == "Jean-Francois Gillet"){
+                        statistics[i].spelernaam = "Jean-François Gillet";
+                    } else if(statistics[i].spelernaam == "Moussa Dembele") {
+                        statistics[i].spelernaam = "Moussa Dembélé"
+                    } else if (statistics[i].spelernaam == "Bjorn Engels"){
+                        statistics[i].spelernaam = "Björn Engels"
+                    }
+                    //
+
+
                     speler = new Speler(statistics[i].spelernaam, 'gekozen', statistics[i].percentage);
                 }
                 else{
