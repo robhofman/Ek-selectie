@@ -144,7 +144,7 @@ $resultA = $db->query($queryA);
         alert("I'm clicked");
         FB.ui({
             method: 'share',
-            href: 'overview.php'
+            href: 'overview.php?speler1=geert&speler2=tom'
         }, function(response){});
     };
 
