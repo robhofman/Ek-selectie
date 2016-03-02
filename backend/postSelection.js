@@ -55,13 +55,18 @@ $(document).ready(function(){
 				var obj = {};
 
 				obj.spelernaam = data[i].naam;
+				obj.positie = data[i].positie;
 				obj.percentage = (Math.round((parseInt(data[i].aantal))/(parseInt(data[0].totaal))*100));
+
 
 				statistics.push(obj);
 			}
 
 		},
 			async: false
-    });	
+    	});
+
+
+
 	});
 });
