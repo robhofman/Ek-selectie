@@ -11,7 +11,22 @@
         $scope.resultLijst = [];
         $scope.selectie = [];
         $scope.percentageLijst = [];
+        $scope.urlToShare = "";
+        $scope.aantalDeelnames = 0;
         var hoogteLijst = 0;
+
+
+        var getUrlToShare = function (spelers) {
+            var lengte = spelers.length;
+            var urleerstedeel = window.location.href+"/overview.php";
+            var urlTweedeDeel = "?";
+            for(var i=0; i<lengte; i++){
+                var speler = spelers[i];
+                urlTweedeDeel +="player"+i+"="+ speler;
+                if(i!=lengte-1)urlTweedeDeel +="&";
+            }
+            $scope.urlToShare = urleerstedeel + encodeURIComponent(urlTweedeDeel.trim());
+        };
 
         var getAllPlayers = function(){
             var main = document.getElementById("gameSpace");
@@ -41,19 +56,15 @@
         };
 
 
+
         var openPopup = function () {
+
             ngDialog.open({
                 template: 'testTemplate',
                 scope: $scope
             });
         };
 
-        var openPopupTeVeel = function () {
-            ngDialog.open({
-                template: "teVeelSpelers.html"
-
-            });
-        };
 
         var selectInnerCheckbox = function(){
             //speler is reeds geselecteerd => ontchecken
@@ -111,6 +122,10 @@
 
 
 
+        var aantalInzendingenOphalen = function(){
+            $scope.aantalDeelnames = totaalAantalInzendingen;
+        };
+
         var checkSpelersInSelectie = function(){
             var length = statistics.length;
             var result = [];
@@ -140,6 +155,7 @@
                 result.push(speler);
             }
             $scope.percentageLijst = result;
+            aantalInzendingenOphalen();
 
         };
 
@@ -165,6 +181,9 @@
                 $("#btnBewaar").addClass("hidden");
                 $("#btnBekijkTeam").addClass("hidden");
                 checkSpelersInSelectie();
+                getUrlToShare($scope.selectie);
+
+
             }
         };
 
@@ -287,8 +306,7 @@
             btnSelecteer23.addEventListener("click", selecteer23);
 
             //setTimeout(function(){luikVallen();}, 1000);
-            var btnfb = document.getElementById("shareFb");
-            btnfb.addEventListener("click", intifb);
+
 
         };
 

@@ -42,17 +42,24 @@ $resultA = $db->query($queryA);
 <script src="backend/postSelection.js"></script>
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
-    <h2 ng-bind="aantalSpelers" class="aantal"></h2>
+    <div id="header">
+        <h2 ng-bind="aantalSpelers" class="aantal"></h2>
+    </div>
 
     <!--<form action="php/post.php" method="post">-->
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
-                <h1>Bedankt voor uw deelname! reeds 6000 mensen gaven hun selectie door.</h1>
+                <h1>Bedankt voor uw deelname! reeds {{aantalDeelnames}} mensen gaven hun selectie door.</h1>
                 <ul id="resultatenLijst">
                     <li ng-repeat="speler in percentageLijst" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
                         <span class="percent">{{speler.percentage}}%</span>
+
                     </li>
+
                 </ul>
+
+
+                </div>
             </div>
             <img src="img/plane.png" alt="treintje" id="trein">
         </div>
@@ -83,14 +90,13 @@ $resultA = $db->query($queryA);
             ?>
             </div>
         </div>
-    <div>
+    <div id="buttonsDiv">
         <button class="sporzaButton" id="btnBekijkTeam" >Bekijk je selectie</button>
         <button class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >Wijzig je team</button>
         <button class="sporzaButton hidden" id="btnHidden" value="wijzig je team" >Wijzig je team</button>
 
     </div>
     <button id="btnSelecteer23">selecteer 23 spelers</button>
-    <button id="shareFb"></button>
 
 </main>
 <script type="text/ng-template" id="testTemplate">
@@ -108,12 +114,11 @@ $resultA = $db->query($queryA);
 <script src="js/facebook.js"></script>
 <script src="controllers/selectieController.js"></script>
 <script src="backend/share.js"></script>
-<div class="fb-share-button"
-     data-href="http://www.goudenduivels.sporzalb/selectiemaker/lijst"
-     data-layout="button_count">
-</div>
 
-<button id="twittershare">Deel via twitter</button>
+
+
+
+
 <?php
 $resultGK->free();
 $resultV->free();

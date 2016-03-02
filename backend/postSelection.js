@@ -1,4 +1,5 @@
 var statistics = [];
+var totaalAantalInzendingen;
 
 $(document).ready(function(){
 	$('#btnHidden').click(function(){
@@ -61,6 +62,7 @@ $(document).ready(function(){
 
 				statistics.push(obj);
 			}
+            totaalAantalInzendingen = data[0].totaal;
 
 		},
 			async: false
