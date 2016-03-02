@@ -161,14 +161,18 @@
 
         var checkSpelersInSelectie = function(){
             var length = statistics.length;
+            var aantalKeepers = 0;
+
             for(var i = 0; i<length; i++){
                 var speler;
                 var naam = statistics[i].spelernaam;
+                var positie = statistics[i].positie;
+                //var teller = 23;
                 //console.log(naam);
-                var bijdetop = false;
-                if(i<23){
+                /*var bijdetop = false;
+                if(i<teller){
                     bijdetop = true;
-                }
+                }*/
                 if($.inArray(naam, $scope.selectie)>-1){
 
 
@@ -183,24 +187,49 @@
                     //
 
 
-                    speler = new Speler(statistics[i].spelernaam, 'gekozen', statistics[i].percentage);
+                    speler = new Speler(statistics[i].spelernaam, 'gekozen', statistics[i].percentage, positie);
                     $scope.percentageLijstGekozen.push(speler);
-                    if(bijdetop)$scope.top23.push(speler);
+
+                    if($scope.top23.length<23){
+                        if(speler.positie == "GK"){
+                            if(aantalKeepers<3){
+                                $scope.top23.unshift(speler);
+                            }
+                            else{
+                                $scope.thuisBlijvers.push(speler);
+                            }
+                            aantalKeepers += 1;
+                        }
+                        else{
+                            $scope.top23.push(speler);
+
+                        }
+                    }
+
+
+                    /*if(bijdetop){
+                        $scope.top23.push(speler);
+                    }*/
                     else{
                         $scope.thuisBlijvers.push(speler);
                     }
                 }
                 else{
-                    speler = new Speler(statistics[i].spelernaam, "nietgekozen", statistics[i].percentage);
+                    speler = new Speler(statistics[i].spelernaam, "nietgekozen", statistics[i].percentage, positie);
                     $scope.percentageLijstNietGekozen.push(speler);
-                    if(bijdetop)$scope.top23.push(speler);
+                    if($scope.top23.length<23)$scope.top23.push(speler);
                     else{
                         $scope.thuisBlijvers.push(speler);
                     }
                 }
 
-            }
+                //keeper plaats 3 op 1 en 1 op 3
 
+
+            }
+            var b = $scope.top23[0];
+            $scope.top23[0] = $scope.top23[2];
+            $scope.top23[2] = b;
             aantalInzendingenOphalen();
 
         };
@@ -357,8 +386,8 @@
                 allListItems[i].addEventListener("click", selectInnerCheckbox);
             }
 
-            var btnSelecteer23 = document.getElementById("btnSelecteer23");
-            btnSelecteer23.addEventListener("click", selecteer23);
+            //var btnSelecteer23 = document.getElementById("btnSelecteer23");
+            //btnSelecteer23.addEventListener("click", selecteer23);
 
             //setTimeout(function(){luikVallen();}, 1000);
 

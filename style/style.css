@@ -7,7 +7,7 @@ main{
     width: 670px;
     font-family: 'Lato', sans-serif;
     background-color: #021c46;
-
+    padding-bottom: 30px;
 }
 
 #GK, #V, #M, #A{
@@ -42,6 +42,7 @@ main{
     display: inline-block;
     margin: 5px;
     position: relative;
+    cursor: pointer;
 
 }
 
@@ -51,6 +52,7 @@ main{
     display: inline-block;
     margin: 5px;
     position: relative;
+    cursor: pointer;
 }
 
 li>img{
@@ -270,10 +272,12 @@ li>img{
     #GK>li, #V>li{
         width: 23%;
         margin: 1%;
+        cursor: auto;
     }
     #M>li, #A>li{
         width: 23%;
         margin: 1%;
+        cursor: auto;
     }
 
 
