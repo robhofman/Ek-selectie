@@ -27,8 +27,11 @@ $resultA = $db->query($queryA);
 <html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="node_modules/ng-dialog/css/ngDialog.css">
     <link rel="stylesheet" href="node_modules/ng-dialog/css/ngDialog-theme-default.css">
@@ -49,20 +52,38 @@ $resultA = $db->query($queryA);
     <!--<form action="php/post.php" method="post">-->
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
-                <h1>Bedankt voor uw deelname! reeds {{aantalDeelnames}} mensen gaven hun selectie door.</h1>
+                <h1>Bedankt voor uw deelname! Aantal inzendingen: {{aantalDeelnames}}</h1>
+
+
+
                 <ul id="resultatenLijst">
-                    <li ng-repeat="speler in percentageLijst" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
+                    <li>
+                        <div class="titelteam">
+                            <h2>Sporza selectie</h2>
+                        </div >
+                    </li>
+                    <li ng-repeat="speler in top23" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
                         <span class="percent">{{speler.percentage}}%</span>
 
                     </li>
 
                 </ul>
 
+                <ul id="resultatenLijstNietGekozen">
+                    <li>
+                        <div class="titelteam nietGekozen">
+                            <h2>Niet geselecteerd</h2>
+                        </div>
+                    </li>
+                    <li ng-repeat="speler in thuisBlijvers" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
+                        <span class="percent">{{speler.percentage}}</span>
+                    </li>
+                </ul>
 
-                </div>
+
             </div>
-            <img src="img/plane.png" alt="treintje" id="trein">
         </div>
+        <img src="img/plane.png" alt="treintje" id="trein">
         <div id="checkboxes">
             <div id="innerContainerCheckboxes">
             <?php
@@ -101,19 +122,20 @@ $resultA = $db->query($queryA);
 </main>
 <script type="text/ng-template" id="testTemplate">
     <h1>U heeft uw {{23 - aantalSpelers}} spelers gekozen</h1>
-    <input type="button" ng-click="bewaar()" value="Bewaar" class="sporzaButton" id="btnBewaarPopup"/>
+    <input type="button" ng-click="bewaar()" value="Verzend" class="sporzaButton" id="btnBewaarPopup"/>
     <input type="button" ng-click="wijzig()" value="Wijzig" class="sporzaButton" id="btnWijzigPopup">
+    <div>
+        <img src="img/Wilmots_perfecto_png.png" alt="Marc Wilmots">
+    </div>
 </script>
 <script src="lib/jquery-ui.js"></script>
 <script src="js/disableDoubleTap.js"></script>
 <script src="lib/angular.js"></script>
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>
+<script src="js/jquery.scrollTo.js"></script>
 <script src="models/Speler.js"></script>
 <script src="app.js"></script>
-<script src="js/facebookLoad.js" type="text/javascript"></script>
-<script src="js/facebook.js"></script>
 <script src="controllers/selectieController.js"></script>
-<script src="backend/share.js"></script>
 
 
 

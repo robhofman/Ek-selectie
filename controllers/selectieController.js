@@ -13,10 +13,14 @@
         $scope.percentageLijst = [];
         $scope.urlToShare = "";
         $scope.aantalDeelnames = 0;
+        $scope.percentageLijstNietGekozen = [];
+        $scope.percentageLijstGekozen = [];
+        $scope.top23 = [];
+        $scope.thuisBlijvers = [];
         var hoogteLijst = 0;
 
 
-        var getUrlToShare = function (spelers) {
+       /* var getUrlToShare = function (spelers) {
             var lengte = spelers.length;
             var urleerstedeel = window.location.href+"/overview.php";
             var urlTweedeDeel = "?";
@@ -26,7 +30,7 @@
                 if(i!=lengte-1)urlTweedeDeel +="&";
             }
             $scope.urlToShare = urleerstedeel + encodeURIComponent(urlTweedeDeel.trim());
-        };
+        };*/
 
         var getAllPlayers = function(){
             var main = document.getElementById("gameSpace");
@@ -59,10 +63,39 @@
 
         var openPopup = function () {
 
+
             ngDialog.open({
                 template: 'testTemplate',
                 scope: $scope
             });
+            var value = 0;
+            var hoogteLijst = $("#checkboxes").height();
+            var body = $("body").width();
+
+            //android
+            if(!(navigator.userAgent.match(/iPhone/i)) && !(navigator.userAgent.match(/iPod/i)) &&(body < 600)) {
+                value = hoogteLijst-1200+"px";
+                setTimeout(function(){
+                    $('.ngdialog-content').css("height", value);
+                }, 300);
+            }
+
+            //desktop
+            else if(body > 640){
+                value = hoogteLijst-350+"px";
+                setTimeout(function(){
+                    $('.ngdialog-content').css("height", value);
+                }, 300);
+            }
+
+            //iphone
+            else{
+                setTimeout(function(){
+                    $('.ngdialog-content').children("div").children("img").css("display", "none");
+                }, 300);
+            }
+
+
         };
 
 
@@ -128,11 +161,14 @@
 
         var checkSpelersInSelectie = function(){
             var length = statistics.length;
-            var result = [];
             for(var i = 0; i<length; i++){
                 var speler;
                 var naam = statistics[i].spelernaam;
                 //console.log(naam);
+                var bijdetop = false;
+                if(i<23){
+                    bijdetop = true;
+                }
                 if($.inArray(naam, $scope.selectie)>-1){
 
 
@@ -148,13 +184,23 @@
 
 
                     speler = new Speler(statistics[i].spelernaam, 'gekozen', statistics[i].percentage);
+                    $scope.percentageLijstGekozen.push(speler);
+                    if(bijdetop)$scope.top23.push(speler);
+                    else{
+                        $scope.thuisBlijvers.push(speler);
+                    }
                 }
                 else{
                     speler = new Speler(statistics[i].spelernaam, "nietgekozen", statistics[i].percentage);
+                    $scope.percentageLijstNietGekozen.push(speler);
+                    if(bijdetop)$scope.top23.push(speler);
+                    else{
+                        $scope.thuisBlijvers.push(speler);
+                    }
                 }
-                result.push(speler);
+
             }
-            $scope.percentageLijst = result;
+
             aantalInzendingenOphalen();
 
         };
@@ -181,7 +227,6 @@
                 $("#btnBewaar").addClass("hidden");
                 $("#btnBekijkTeam").addClass("hidden");
                 checkSpelersInSelectie();
-                getUrlToShare($scope.selectie);
 
 
             }
@@ -201,7 +246,12 @@
             else{
                 relevanteHoogte = hoogte + 16;
             }
-            $("#canvasLuik").css({height: relevanteHoogte }).removeClass("hidden");
+
+            if($("body").width()<600){
+                relevanteHoogte = 2000;
+            }
+
+            $("#canvasLuik").css({height: relevanteHoogte+50 }).removeClass("hidden");
             var b = $("#luikBackground");
 
             //b.css({"margin-top": "-16px" });
@@ -214,7 +264,7 @@
             });
 
             b.animate({
-                height: relevanteHoogte+"px"
+                height: relevanteHoogte + 70+"px"
             },{
                 duration: "slow",
                 easing: "easeOutBounce"
@@ -256,7 +306,12 @@
         };
 
         var showResultList = function (hoogte) {
-            $("#resultatenLijst").removeClass("hidden").css({height: hoogte}).animate({opacity: 1}, 3000);
+            $("#resultatenLijst").removeClass("hidden")
+                /*.css({height: hoogte})*/
+                .animate({opacity: 1}, 3000);
+            $("#resultatenLijstNietGekozen").removeClass("hidden")
+                /*.css({height: hoogte})*/
+                .animate({opacity: 1}, 3000);
         };
 
 
