@@ -7,16 +7,16 @@ include 'backend/dbconnect.php';
 //$rowCount = $result->num_rows;
 
 
-$queryGK = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="GK"';
+$queryGK = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="GK" ORDER BY naam ASC';
 $resultGK = $db->query($queryGK);
 
-$queryV = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="V"';
+$queryV = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="V" ORDER BY naam ASC';
 $resultV = $db->query($queryV);
 
-$queryM = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="M"';
+$queryM = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="M" ORDER BY naam ASC';
 $resultM = $db->query($queryM);
 
-$queryA = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="A" ORDER BY spitsniveau ASC';
+$queryA = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="A" ORDER BY naam ASC';
 $resultA = $db->query($queryA);
 
 
