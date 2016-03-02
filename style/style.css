@@ -90,15 +90,24 @@ li>img{
     position: absolute;
 }
 
+.ngdialog-content img{
+    height: 90%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
+
 .sporzaButton{
-    background-color: #066862;
+    background-color: red;
     border: 0;
-    padding: 15px 30px;
+    border-radius: 5px;
+    padding: 5px 15px;
     color: white;
     outline: none;
     cursor: pointer;
     font-family: 'Lato', sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .sporzaButton:disabled{
@@ -107,29 +116,50 @@ li>img{
 
 #luikBackground{
     z-index: 50;
-    width: 670px;
+    width: 98%;
     height: 0;
-    background-color: #066862;
+    background-color: #021c46;
+    margin-top: -30px;
     /*overflow: hidden;*/
     /*overflow-x: hidden;*/
 }
 
-#resultatenLijst{
+#luikBackground>h1
+{
+    margin: 23px 15px 10px;
+    width: 97%;
+    padding-top: 10px;
+}
+
+#resultatenLijst, #resultatenLijstNietGekozen{
     padding: 0;
     list-style-type: none;
     color: white;
     opacity: 0;
-    height: 100%;
+    /*height: 100%;*/
     /*overflow-x: hidden;*/
-    width: 100%;
-    background-color: #066862;
-    margin-top: 0;
+    width: 40%;
+    background-color: #021c46;
+    display: inline-block;
+    float: left;
+    margin: 5px 15px;
 }
-#resultatenLijst>li{
-    width: 50%;
-    padding-top: 10px;
+#resultatenLijst>li, #resultatenLijstNietGekozen>li{
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
     position: relative;
     float: left;
+    margin-top: 5px;
+}
+
+#resultatenLijst>li{
+    background-color: red;
+}
+
+#resultatenLijstNietGekozen>li{
+    background-color: white;
+    color: red;
 }
 
 .speler .check{
@@ -154,9 +184,23 @@ li>img{
     margin: 15px;
 }
 
-.nietgekozen{
-    opacity: 0.5;
+.gekozen{
+    font-weight: bold;
 }
+
+
+
+.nietGekozen{
+    background-color: white;
+    color: red;
+}
+
+#luikBackground h2{
+    margin-left: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
 
 .spelernaam{
     width: 60%;
@@ -189,8 +233,34 @@ li>img{
 
 
 @media screen and (max-device-width: 600px), screen and (max-width: 600px){
-    main, #canvasLuik, #gameSpace, #checkboxes, #luikBackground, #resultatenLijst{
-        width: 100%;
+    body{
+        width: 100vw;
+    }
+
+    main, #canvasLuik, #gameSpace, #checkboxes{
+        width: 100vw;
+    }
+
+
+    .desktopTitel{
+        display: none;
+    }
+
+    .ngdialog-content img{
+        max-height: 400px;
+        width: auto;
+    }
+
+    #luikBackground{
+        width: 100vw;
+    }
+
+    #gameSpace{
+        overflow: hidden;
+    }
+
+    #resultatenLijst, #resultatenLijstNietGekozen{
+        width: 97%;
     }
 
     #GK, #V, #M, #A{
@@ -213,10 +283,20 @@ li>img{
     .ngdialog.ngdialog-theme-default .ngdialog-content {
 
         margin: 0 auto !important;
-        width: 100%;
+        margin-top: 300px !important;
+        width: 97%;
     }
+
+    .ngdialog-content h1{
+        margin-top: 75px;
+    }
+
+    .ngdialog{
+        margin-left: 0;
+    }
+
     #gameSpace>h1{
-        width: 100%;
+        width: 97%;
     }
 
     #gameBody{
@@ -227,13 +307,76 @@ li>img{
         right: 15px;
     }
 
+    .titelteam {
+        width: 96%;
+    }
+
     #resultatenLijst>li{
-        width: 100%;
+        width: 96%;
+    }
+
+    #resultatenLijstNietGekozen>li{
+        width: 96%;
     }
     #gameSpace h1{
         max-width: 100%;
     }
     #luikBackground{
         overflow: auto;
+        overflow-x: hidden;
     }
+}
+
+
+
+
+
+/*5*/
+@media only screen and (device-aspect-ratio: 40/71)
+    /*
+and (min-device-width : 320px)
+and (max-device-width : 568px)*/
+and (orientation : portrait) {
+
+    main, #canvasLuik, #gameSpace, #checkboxes{
+        width: 100%;
+        margin-right: 12px;
+        max-width: 285px;
+    }
+
+    body, #luikBackground{
+        max-width: 285px;
+    }
+
+    .ngdialog{
+        max-width: 365px !important;
+        margin-left: 0 !important;
+        height: auto!important;
+    }
+}
+
+
+
+/*iphone*/
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : portrait) {
+
+    main, #canvasLuik, #gameSpace, #checkboxes{
+        width: 100%;
+        margin-right: 12px;
+        max-width: 342px;
+    }
+
+    body, #luikBackground{
+        max-width: 342px;
+    }
+
+    .ngdialog{
+        max-width: 365px !important;
+        margin-left: 0 !important;
+        height: auto!important;
+    }
+
 }
