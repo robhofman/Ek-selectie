@@ -16,7 +16,7 @@ $resultV = $db->query($queryV);
 $queryM = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="M"';
 $resultM = $db->query($queryM);
 
-$queryA = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="A"';
+$queryA = 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers WHERE positie="A" ORDER BY spitsniveau DESC';
 $resultA = $db->query($queryA);
 
 
