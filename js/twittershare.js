@@ -1,7 +1,7 @@
 document.getElementById("btnTwitterShare").onclick = function() {
 	var twitterUrl = "https://twitter.com/share?";	
 	var queryString = shareQueryString;
-	openWindow(shareQueryString);
+	openWindow(twitterUrl + shareQueryString);
 };
 
 
