@@ -15,6 +15,8 @@ main{
     list-style-type: none;
 }
 
+
+
 #header{
     overflow: hidden;
     background-image: url("../img/plane_rotated.png");
@@ -26,18 +28,64 @@ main{
     display: none !important;
 }
 
+#btnShare{
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    background-color: #395b9b;
+    outline: 0;
+    border: none;
+    color: white;
+    width: 74px;
+    border-radius: 3px;
+    font-size: .9em;
+}
+
+#btnShare:hover{
+    background-color: #06457c;
+}
+
+
+
+.twitter-share-button{
+    position: absolute !important;
+
+    height: 20px;
+    float: right;
+    margin-right: 15px !important;
+    right: 15px !important;
+    font-family: 'lato', sans-serif;
+    top: 50px;
+}
+
+#btnShare>p{
+    margin-left: 10px;
+    display: inline;
+    vertical-align: top;
+    font-weight: 500;
+    font-size: 11px;
+}
+
 #gameSpace h1{
     width: 670px;
     color: #fff;
 }
 
-#luikBackground>h1:nth-child(3){
-    margin-top: 0;
-    padding-top: 0;
+#resultatenTitelsDiv{
+    padding-top: 10px;
+    color: #fff;
+    font-size: 0.9em;
 }
 
-#luikBackground>h1:nth-child(1){
-    margin-bottom: 0;
+#resultatenTitelsDiv>h2:nth-child(2){
+    margin-left: 15px;
+    display: inline-block;
+}
+
+#resultatenTitelsDiv>h2:nth-child(1){
+    margin-right: 15px;
+    display: inline-block;
+    float: right;
 }
 
 .verborgen{
@@ -151,11 +199,36 @@ li>img{
     /*overflow-x: hidden;*/
 }
 
+a{
+    text-decoration: none;
+}
+.overviewButton{
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+.overviewButton>p{
+    margin: 0;
+    display: inline;
+}
+
+.spelersOverviewDiv{
+    width: 97%;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+#overviewList{
+    list-style-type: none;
+    padding: 5px;
+}
+
 #luikBackground>h1
 {
-    margin: 23px 15px 10px;
+    margin: 23px 13px 40px;
     width: 97%;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 #resultatenLijst, #resultatenLijstNietGekozen{
@@ -165,12 +238,27 @@ li>img{
     opacity: 0;
     /*height: 100%;*/
     /*overflow-x: hidden;*/
-    width: 40%;
+    width: 45%;
     background-color: #021c46;
     display: inline-block;
     float: left;
     margin: 5px 15px;
 }
+
+#resultatenLijstNietGekozen{
+    float: right;
+    padding: 0;
+    list-style-type: none;
+    color: white;
+    opacity: 0;
+    /*height: 100%;*/
+    /*overflow-x: hidden;*/
+    width: 45%;
+    background-color: #021c46;
+    display: inline-block;
+    margin: 5px 15px;
+}
+
 #resultatenLijst>li, #resultatenLijstNietGekozen>li{
     width: 100%;
     padding-top: 5px;
@@ -268,11 +356,43 @@ li>img{
         width: 100vw;
     }
 
+    #luikBackground>h1
+    {
+        max-width: 90%;
+        padding-top: 50px;
+    }
+
+    .btnSocial{
+        display: inline;
+        height: 20px;
+    }
+    .twitter-share-button{
+        display: inline;
+        right: 90px !important;
+        top: 15px !important;
+    }
+
+    #btnShare{
+        right: 13px;
+    }
+
+
+    .widget>div:nth-child(1){
+        height: 30px;
+    }
 
     #innerContainerAfterSubmit>ul{
         padding: 0;
         margin-left: 5px;
     }
+    .innerContainer{
+        margin-right: 15px;
+    }
+
+    #innerContainerAfterSubmit{
+        margin-right: 15px;
+    }
+
     .desktopTitel{
         display: none;
     }
@@ -316,6 +436,25 @@ li>img{
     }
 
 
+
+    #resultatenTitelsDiv{
+        width: inherit;
+        padding-bottom: 5px;
+        color: #fff;
+        font-size: 0.8em;
+    }
+
+    #resultatenTitelsDiv>h2:nth-child(2){
+        margin-left: 15px;
+        display: inline-block;
+    }
+
+    #resultatenTitelsDiv>h2:nth-child(1){
+        margin-right: 7px;
+        display: inline-block;
+        float: right;
+    }
+
     #GK>li>img:nth-child(2), #V>li>img:nth-child(2), #M>li>img:nth-child(2), #A>li>img:nth-child(2){
         width: 100%;
     }
@@ -335,6 +474,7 @@ li>img{
     }
 
     #gameSpace>h1{
+        margin-top: 30px;
         width: 97%;
     }
 

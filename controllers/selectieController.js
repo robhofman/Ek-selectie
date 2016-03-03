@@ -22,6 +22,7 @@
         $scope.aanvallers = [];
         $scope.verdedigers = [];
         $scope.middenvelders = [];
+        $scope.url = "";
         var hoogteLijst = 0;
 
 
@@ -111,6 +112,10 @@
 
         };
 
+
+        var generateTwitterLink = function(){
+            //$('.twitter-share-button').attr('data-url', sharelink);
+        };
 
         var selectInnerCheckbox = function(){
             //speler is reeds geselecteerd => ontchecken
@@ -298,6 +303,7 @@
             ngDialog.close();
             var allListItems = $('.speler');
             var selectie = [];
+            $scope.selectie = selectie;
             var lengte = allListItems.length;
             for (var i=0;  i<lengte; i++) {
                 if(allListItems[i].firstChild.checked == true){
@@ -317,6 +323,7 @@
             else{
                 $scope.selectie = selectie;
                 luikVallen();
+                generateTwitterLink();
                 $("#btnWijzig").addClass("verborgen");
                 $("#btnBewaar").addClass("hidden");
                 $("#btnBekijkTeam").addClass("hidden");
@@ -345,7 +352,7 @@
                 relevanteHoogte = 2900;
             }
             else{
-                relevanteHoogte += 600
+                relevanteHoogte += 800
             }
 
             $("#canvasLuik").css({height: relevanteHoogte+50 }).removeClass("hidden");

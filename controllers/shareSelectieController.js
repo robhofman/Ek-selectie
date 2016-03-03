@@ -25,7 +25,7 @@
         var getPlayers = function () {
 
             for(var i =0; i<23; i++){
-                var speler = getParameterByName("player"+i);
+                var speler = getParameterByName("s"+i);
                 if(speler)
                 $scope.spelers.push(speler);
             }

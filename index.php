@@ -43,6 +43,7 @@ $resultA = $db->query($queryA);
 <body id="gameBody">
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="backend/postSelection.js"></script>
+<script src="js/facebookLoad.js"></script>
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
     <div id="header">
@@ -50,58 +51,67 @@ $resultA = $db->query($queryA);
     </div>
 
     <!--<form action="php/post.php" method="post">-->
-        <div id="canvasLuik" class="hidden">
-            <div id="luikBackground">
-                <h1>Bedankt voor uw deelname!</h1><br />
-                <h1> Aantal inzendingen: {{aantalDeelnames}}</h1>
+    <div id="canvasLuik" class="hidden">
+        <div id="luikBackground">
+            <h1>De Bondscoach dankt u!</h1>
 
-                <div id="overzichtAfterSubmit">
-                    <div id="innerContainerAfterSubmit" class="innerContainer">
-                        <ul id="GKsub">
-                            <li ng-repeat="speler in keepers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
-                        </ul>
-                        <ul id="Vsub">
-                            <li ng-repeat="speler in verdedigers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
-                        </ul>
-                        <ul id="Msub">
-                            <li ng-repeat="speler in middenvelders" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
-                        </ul>
-                        <ul id="Asub">
-                            <li ng-repeat="speler in aanvallers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
-                        </ul>
-                    </div>
-                </div>
 
-                <ul id="resultatenLijst">
-                    <li>
-                        <div class="titelteam">
-                            <h2>Sporza selectie</h2>
-                        </div >
-                    </li>
-                    <li ng-repeat="speler in top23" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
-                        <span class="percent">{{speler.percentage}}%</span>
-
-                    </li>
-
-                </ul>
-
-                <ul id="resultatenLijstNietGekozen">
-                    <li>
-                        <div class="titelteam nietGekozen">
-                            <h2>Niet geselecteerd</h2>
-                        </div>
-                    </li>
-                    <li ng-repeat="speler in thuisBlijvers" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
-                        <span class="percent">{{speler.percentage}}%</span>
-                    </li>
-                </ul>
-
+            <button id="btnShare" class="btnSocial"><i class="fa fa-facebook "></i><p>Share</p></button>
+            <div id="rootTwitter">
 
             </div>
+            <div id="overzichtAfterSubmit">
+                <div id="innerContainerAfterSubmit" class="innerContainer">
+                    <ul id="GKsub">
+                        <li ng-repeat="speler in keepers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                    </ul>
+                    <ul id="Vsub">
+                        <li ng-repeat="speler in verdedigers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                    </ul>
+                    <ul id="Msub">
+                        <li ng-repeat="speler in middenvelders" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                    </ul>
+                    <ul id="Asub">
+                        <li ng-repeat="speler in aanvallers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="resultatenTitelsDiv">
+                <h2> Aantal inzendingen: {{aantalDeelnames}}</h2>
+                <h2>Resultaten:</h2>
+
+            </div>
+
+            <ul id="resultatenLijst">
+                <li>
+                    <div class="titelteam">
+                        <h2>Sporza selectie</h2>
+                    </div >
+                </li>
+                <li ng-repeat="speler in top23" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
+                    <span class="percent">{{speler.percentage}}%</span>
+
+                </li>
+
+            </ul>
+
+            <ul id="resultatenLijstNietGekozen">
+                <li>
+                    <div class="titelteam nietGekozen">
+                        <h2>Niet geselecteerd</h2>
+                    </div>
+                </li>
+                <li ng-repeat="speler in thuisBlijvers" class="{{speler.gekozen}}"><p class="spelernaam">{{speler.naam}}</p>
+                    <span class="percent">{{speler.percentage}}%</span>
+                </li>
+            </ul>
+
+
         </div>
-        <img src="img/plane.png" alt="treintje" id="trein">
-        <div id="checkboxes">
-            <div id="innerContainerCheckboxes" class="innerContainer">
+    </div>
+    <img src="img/plane.png" alt="treintje" id="trein">
+    <div id="checkboxes">
+        <div id="innerContainerCheckboxes" class="innerContainer">
             <?php
             echo '<ul id="GK">';
             while($row = $resultGK->fetch_array(MYSQLI_BOTH)){
@@ -125,14 +135,15 @@ $resultA = $db->query($queryA);
             echo '</ul>';
 
             ?>
-            </div>
         </div>
+    </div>
     <div id="buttonsDiv">
         <button class="sporzaButton" id="btnBekijkTeam" >Bekijk je selectie</button>
         <button class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >Wijzig je team</button>
         <button class="sporzaButton hidden" id="btnHidden" value="wijzig je team" >Wijzig je team</button>
     </div>
-    <button id="btnSelecteer23">selecteer 23</button>
+    <button id="btnSelecteer23">selecter 23</button>
+
 </main>
 <script type="text/ng-template" id="testTemplate">
     <h1>U heeft uw {{23 - aantalSpelers}} spelers gekozen</h1>
@@ -142,20 +153,32 @@ $resultA = $db->query($queryA);
         <img src="img/Wilmots_perfecto_png.png" alt="Marc Wilmots">
     </div>
 </script>
-<script type="text/ng-template" id="keeperTemplate">
-    <h1>Gelieve 3 keepers te selecteren</h1>
-</script>
 <script src="lib/jquery-ui.js"></script>
-<script src="js/keeperChecker.js"></script>
 <script src="js/disableDoubleTap.js"></script>
 <script src="lib/angular.js"></script>
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>
 <script src="js/jquery.scrollTo.js"></script>
 <script src="models/Speler.js"></script>
+<script src="backend/sharescript.js"></script>
 <script src="app.js"></script>
 <script src="controllers/selectieController.js"></script>
+<script></script>
 
+<button id="jow">
+    share to facebook
+</button>
+<script type="text/javascript">
+    //    document.getElementById("jow").onclick = function() {
+    //        alert("I'm clicked");
+    //        console.log("Sharelink vanuit FB: " + sharelink);
+    //        FB.ui({
+    //            method: 'share',
+    //            href: sharelink
+    //
+    //        }, function(response){});
+    //    };
 
+</script>
 
 
 

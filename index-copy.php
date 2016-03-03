@@ -53,8 +53,26 @@ $resultA = $db->query($queryA);
     <!--<form action="php/post.php" method="post">-->
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
-                <h1>Bedankt voor uw deelname! Aantal inzendingen: {{aantalDeelnames}}</h1>
+                <h1>Bedankt voor uw deelname!</h1><br />
+                <h1> Aantal inzendingen: {{aantalDeelnames}}</h1>
 
+
+                <div id="overzichtAfterSubmit">
+                    <div id="innerContainerAfterSubmit" class="innerContainer">
+                        <ul id="GKsub">
+                            <li ng-repeat="speler in keepers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                        </ul>
+                        <ul id="Vsub">
+                            <li ng-repeat="speler in verdedigers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                        </ul>
+                        <ul id="Msub">
+                            <li ng-repeat="speler in middenvelders" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                        </ul>
+                        <ul id="Asub">
+                            <li ng-repeat="speler in aanvallers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                        </ul>
+                    </div>
+                </div>
 
 
                 <ul id="resultatenLijst">
