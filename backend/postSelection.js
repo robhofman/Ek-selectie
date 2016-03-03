@@ -14,15 +14,15 @@ $(document).ready(function(){
 
 		console.log(sharelink);
 
-		//document.getElementById("btnBewaarPopup").onclick = function() {
-			//alert("I'm clicked");
-			console.log("Sharelink vanuit FB: " + sharelink);
-			FB.ui({
-				method: 'share',
-				href: sharelink
-
-			}, function(response){});
-		//};
+		////document.getElementById("btnBewaarPopup").onclick = function() {
+		//	//alert("I'm clicked");
+		//	console.log("Sharelink vanuit FB: " + sharelink);
+		//	FB.ui({
+		//		method: 'share',
+		//		href: sharelink
+        //
+		//	}, function(response){});
+		////};
 
 
 
