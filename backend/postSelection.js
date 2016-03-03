@@ -14,6 +14,16 @@ $(document).ready(function(){
 
 		console.log(sharelink);
 
+		document.getElementById("jow").onclick = function() {
+			alert("I'm clicked");
+			console.log("Sharelink vanuit FB: " + sharelink);
+			FB.ui({
+				method: 'share',
+				href: sharelink
+
+			}, function(response){});
+		};
+
 		$.ajax({
 			type: "POST",
 			url: "backend/postSelection.php",

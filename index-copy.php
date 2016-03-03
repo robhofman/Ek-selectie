@@ -141,15 +141,15 @@ $resultA = $db->query($queryA);
     share to facebook
 </button>
 <script type="text/javascript">
-    document.getElementById("jow").onclick = function() {
-        alert("I'm clicked");
-        console.log("Sharelink vanuit FB: " + sharelink);
-        FB.ui({
-            method: 'share',
-            href: sharelink;
-
-        }, function(response){});
-    };
+//    document.getElementById("jow").onclick = function() {
+//        alert("I'm clicked");
+//        console.log("Sharelink vanuit FB: " + sharelink);
+//        FB.ui({
+//            method: 'share',
+//            href: sharelink
+//
+//        }, function(response){});
+//    };
 
 </script>
 
