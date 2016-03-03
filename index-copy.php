@@ -117,6 +117,7 @@ $resultA = $db->query($queryA);
         <button class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >Wijzig je team</button>
         <button class="sporzaButton hidden" id="btnHidden" value="wijzig je team" >Wijzig je team</button>
     </div>
+    <button id="btnSelecteer23">selecter 23</button>
 
 </main>
 <script type="text/ng-template" id="testTemplate">
@@ -142,6 +143,7 @@ $resultA = $db->query($queryA);
 <script type="text/javascript">
     document.getElementById("jow").onclick = function() {
         alert("I'm clicked");
+        console.log("Sharelink vanuit FB: " + sharelink);
         FB.ui({
             method: 'share',
             href: sharelink;
