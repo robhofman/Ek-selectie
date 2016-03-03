@@ -59,6 +59,10 @@ $resultA = $db->query($queryA);
 
             <button id="btnShare" class="btnSocial"><i class="fa fa-facebook "></i><p>Share</p></button>
             <button id="btnTwitterShare">share op twitter</button>
+
+
+            <div id="rootTwitter"></div>
+
             <div id="overzichtAfterSubmit">
                 <div id="innerContainerAfterSubmit" class="innerContainer">
                     <ul id="GKsub">
