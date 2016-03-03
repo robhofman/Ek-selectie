@@ -44,7 +44,7 @@ $resultA = $db->query($queryA);
 <body id="gameBody">
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="backend/postSelection.js"></script>
-<script src="js/twittershare.js"></script>
+
 <main id="gameSpace" ng-controller="selectieController">
     <!--selecteer spelers-->
     <div id="header">
@@ -157,6 +157,7 @@ $resultA = $db->query($queryA);
 <script src="models/Speler.js"></script>
 <script src="app.js"></script>
 <script src="controllers/selectieController.js"></script>
+<script src="js/twittershare.js"></script>
 
 
 
