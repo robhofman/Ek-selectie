@@ -4,9 +4,10 @@
 document.getElementById("jow").onclick = function() {
     console.log("Sharelink vanuit FB: " + sharelink);
     FB.ui({
-        method: 'share',
-        href: sharelink
+        method: 'feed',
+        link: sharelink,
+        caption: "Dit is mijn selectie voor het EK 2016"
 
     }, function (response) {
     });
-}
+};
