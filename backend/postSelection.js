@@ -14,7 +14,7 @@ $(document).ready(function(){
 
 		console.log(sharelink);
 
-		document.getElementById("jow").onclick = function() {
+		//document.getElementById("btnBewaarPopup").onclick = function() {
 			alert("I'm clicked");
 			console.log("Sharelink vanuit FB: " + sharelink);
 			FB.ui({
@@ -22,7 +22,9 @@ $(document).ready(function(){
 				href: sharelink
 
 			}, function(response){});
-		};
+		//};
+
+
 
 		$.ajax({
 			type: "POST",
