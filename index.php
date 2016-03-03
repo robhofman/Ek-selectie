@@ -57,9 +57,7 @@ $resultA = $db->query($queryA);
 
 
             <button id="btnShare" class="btnSocial"><i class="fa fa-facebook "></i><p>Share</p></button>
-            <div id="rootTwitter">
-
-            </div>
+            <button id="btnTwitterShare">share op twitter</button>
             <div id="overzichtAfterSubmit">
                 <div id="innerContainerAfterSubmit" class="innerContainer">
                     <ul id="GKsub">
@@ -162,7 +160,7 @@ $resultA = $db->query($queryA);
 <script src="backend/sharescript.js"></script>
 <script src="app.js"></script>
 <script src="controllers/selectieController.js"></script>
-<script></script>
+<script src="js/twittershare.js"></script>
 
 <button id="jow">
     share to facebook
