@@ -52,9 +52,25 @@ $resultA = $db->query($queryA);
     <!--<form action="php/post.php" method="post">-->
         <div id="canvasLuik" class="hidden">
             <div id="luikBackground">
-                <h1>Bedankt voor uw deelname! Aantal inzendingen: {{aantalDeelnames}}</h1>
+                <h1>Bedankt voor uw deelname!</h1><br />
+                <h1> Aantal inzendingen: {{aantalDeelnames}}</h1>
 
-
+                <div id="overzichtAfterSubmit">
+                    <div id="innerContainerAfterSubmit" class="innerContainer">
+                        <ul id="GKsub">
+                            <li ng-repeat="speler in keepers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                        </ul>
+                        <ul id="Vsub">
+                            <li ng-repeat="speler in verdedigers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                        </ul>
+                        <ul id="Msub">
+                            <li ng-repeat="speler in middenvelders" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                        </ul>
+                        <ul id="Asub">
+                            <li ng-repeat="speler in aanvallers" class="speler"><img src="img/{{speler.naam}}.png" alt="{{speler.naam}}"></li>
+                        </ul>
+                    </div>
+                </div>
 
                 <ul id="resultatenLijst">
                     <li>
@@ -85,7 +101,7 @@ $resultA = $db->query($queryA);
         </div>
         <img src="img/plane.png" alt="treintje" id="trein">
         <div id="checkboxes">
-            <div id="innerContainerCheckboxes">
+            <div id="innerContainerCheckboxes" class="innerContainer">
             <?php
             echo '<ul id="GK">';
             while($row = $resultGK->fetch_array(MYSQLI_BOTH)){
@@ -116,7 +132,7 @@ $resultA = $db->query($queryA);
         <button class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >Wijzig je team</button>
         <button class="sporzaButton hidden" id="btnHidden" value="wijzig je team" >Wijzig je team</button>
     </div>
-
+    <button id="btnSelecteer23">selecteer 23</button>
 </main>
 <script type="text/ng-template" id="testTemplate">
     <h1>U heeft uw {{23 - aantalSpelers}} spelers gekozen</h1>
@@ -126,7 +142,11 @@ $resultA = $db->query($queryA);
         <img src="img/Wilmots_perfecto_png.png" alt="Marc Wilmots">
     </div>
 </script>
+<script type="text/ng-template" id="keeperTemplate">
+    <h1>Gelieve 3 keepers te selecteren</h1>
+</script>
 <script src="lib/jquery-ui.js"></script>
+<script src="js/keeperChecker.js"></script>
 <script src="js/disableDoubleTap.js"></script>
 <script src="lib/angular.js"></script>
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>

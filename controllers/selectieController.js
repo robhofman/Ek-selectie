@@ -17,6 +17,11 @@
         $scope.percentageLijstGekozen = [];
         $scope.top23 = [];
         $scope.thuisBlijvers = [];
+        $scope.aantalKeepers = 0;
+        $scope.keepers = [];
+        $scope.aanvallers = [];
+        $scope.verdedigers = [];
+        $scope.middenvelders = [];
         var hoogteLijst = 0;
 
 
@@ -31,6 +36,8 @@
             }
             $scope.urlToShare = urleerstedeel + encodeURIComponent(urlTweedeDeel.trim());
         };*/
+
+
 
         var getAllPlayers = function(){
             var main = document.getElementById("gameSpace");
@@ -60,6 +67,12 @@
         };
 
 
+
+        var openKeeperPopup = function () {
+            ngDialog.open({
+                template: 'keeperTemplate'
+            });
+        };
 
         var openPopup = function () {
 
@@ -101,6 +114,16 @@
 
         var selectInnerCheckbox = function(){
             //speler is reeds geselecteerd => ontchecken
+            var parent = $(this).parent().attr('id');
+            if(parent == "GK"){
+                var max = 3;
+                var lengte = $(this).parent().children("li").children(':checked').length;
+                if(lengte>=max && this.firstChild.checked==false){
+                    this.firstChild.checked = false;
+                    return;
+                }
+            }
+
             if(this.firstChild.checked == true){
                 this.firstChild.checked = false;
                 $(this).find(".check").addClass("hidden");
@@ -120,6 +143,8 @@
                     openPopup();
                     return;
                 }
+
+
                 this.firstChild.checked = true;
                 $(this).addClass("checked");
                 $(this).find(".check").removeClass("hidden");
@@ -177,12 +202,8 @@
 
 
                     //accentcontrole
-                    if(statistics[i].spelernaam == "Jean-Francois Gillet"){
-                        statistics[i].spelernaam = "Jean-François Gillet";
-                    } else if(statistics[i].spelernaam == "Moussa Dembele") {
-                        statistics[i].spelernaam = "Moussa Dembélé"
-                    } else if (statistics[i].spelernaam == "Bjorn Engels"){
-                        statistics[i].spelernaam = "Björn Engels"
+                    if(statistics[i].spelernaam == "Dembele") {
+                        statistics[i].spelernaam = "Dembélé"
                     }
                     //
 
@@ -198,9 +219,19 @@
                             else{
                                 $scope.thuisBlijvers.push(speler);
                             }
+                            $scope.keepers.push(speler);
                             aantalKeepers += 1;
                         }
                         else{
+                            if(speler.positie == "A"){
+                                $scope.aanvallers.push(speler);
+                            }
+                            else if(speler.positie == "M"){
+                                $scope.middenvelders.push(speler);
+                            }
+                            else if(speler.positie == "V"){
+                                $scope.verdedigers.push(speler);
+                            }
                             $scope.top23.push(speler);
 
                         }
@@ -211,13 +242,40 @@
                         $scope.top23.push(speler);
                     }*/
                     else{
+                        if(speler.positie=="GK"){
+                            $scope.keepers.push(speler);
+                        }
+                        else if(speler.positie=="V"){
+                            $scope.verdedigers.push(speler);
+                        }
+                        else if(speler.positie=="A"){
+                            $scope.aanvallers.push(speler);
+                        }
+                        else if(speler.positie =="M"){
+                            $scope.middenvelders.push(speler);
+                        }
                         $scope.thuisBlijvers.push(speler);
                     }
                 }
                 else{
                     speler = new Speler(statistics[i].spelernaam, "nietgekozen", statistics[i].percentage, positie);
                     $scope.percentageLijstNietGekozen.push(speler);
-                    if($scope.top23.length<23)$scope.top23.push(speler);
+                    if($scope.top23.length<23){
+                        if(speler.positie == "GK"){
+                            if(aantalKeepers<3){
+                                $scope.top23.unshift(speler);
+                            }
+                            else{
+                                $scope.thuisBlijvers.push(speler);
+                            }
+                            aantalKeepers += 1;
+                        }
+                        else{
+                            $scope.top23.push(speler);
+
+                        }
+
+                    }
                     else{
                         $scope.thuisBlijvers.push(speler);
                     }
@@ -245,6 +303,13 @@
                 if(allListItems[i].firstChild.checked == true){
                     selectie.push(allListItems[i].firstChild.value);
                 }
+            }
+            var listitems = $("#GK").children("li");
+            var keeperCheckboxes = listitems.children(":checked");
+            if(keeperCheckboxes.length != 3){
+                openKeeperPopup();
+                selectie = [];
+                return;
             }
             if(selectie.length != 23){
                 alert("gelieve juist 23 spelers te selecteren, u heeft er "+selectie.length);
@@ -277,7 +342,10 @@
             }
 
             if($("body").width()<600){
-                relevanteHoogte = 2000;
+                relevanteHoogte = 2900;
+            }
+            else{
+                relevanteHoogte += 600
             }
 
             $("#canvasLuik").css({height: relevanteHoogte+50 }).removeClass("hidden");
@@ -386,8 +454,8 @@
                 allListItems[i].addEventListener("click", selectInnerCheckbox);
             }
 
-            //var btnSelecteer23 = document.getElementById("btnSelecteer23");
-            //btnSelecteer23.addEventListener("click", selecteer23);
+            var btnSelecteer23 = document.getElementById("btnSelecteer23");
+            btnSelecteer23.addEventListener("click", selecteer23);
 
             //setTimeout(function(){luikVallen();}, 1000);
 

@@ -7,7 +7,6 @@ main{
     width: 670px;
     font-family: 'Lato', sans-serif;
     background-color: #021c46;
-    padding-bottom: 30px;
 }
 
 #GK, #V, #M, #A{
@@ -32,6 +31,15 @@ main{
     color: #fff;
 }
 
+#luikBackground>h1:nth-child(3){
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#luikBackground>h1:nth-child(1){
+    margin-bottom: 0;
+}
+
 .verborgen{
     visibility: hidden !important;
 }
@@ -53,6 +61,23 @@ main{
     margin: 5px;
     position: relative;
     cursor: pointer;
+}
+
+#innerContainerAfterSubmit>ul{
+    padding: 0;
+    margin-left: 10px;
+}
+
+#innerContainerAfterSubmit{
+    margin-right: 0;
+}
+
+.speler{
+    width: 65px;
+    /**height: 220px;*/
+    display: inline-block;
+    margin: 5px;
+    position: relative;
 }
 
 li>img{
@@ -177,7 +202,7 @@ li>img{
     transform: rotate(15deg);
 }
 
-#checkboxes{
+#checkboxes, #overzichtAfterSubmit{
     width: 97%;
 
 }
@@ -217,7 +242,7 @@ li>img{
     position: absolute;
 }
 
-#innerContainerCheckboxes{
+.innerContainer{
 
     margin-left: 15px;
     margin-right: 10px;
@@ -239,11 +264,15 @@ li>img{
         width: 100vw;
     }
 
-    main, #canvasLuik, #gameSpace, #checkboxes{
+    main, #canvasLuik, #gameSpace, #checkboxes, #overzichtAfterSubmit{
         width: 100vw;
     }
 
 
+    #innerContainerAfterSubmit>ul{
+        padding: 0;
+        margin-left: 5px;
+    }
     .desktopTitel{
         display: none;
     }
@@ -262,7 +291,7 @@ li>img{
     }
 
     #resultatenLijst, #resultatenLijstNietGekozen{
-        width: 97%;
+        width: 97vw;
     }
 
     #GK, #V, #M, #A{
@@ -275,6 +304,12 @@ li>img{
         cursor: auto;
     }
     #M>li, #A>li{
+        width: 23%;
+        margin: 1%;
+        cursor: auto;
+    }
+
+    .speler{
         width: 23%;
         margin: 1%;
         cursor: auto;
@@ -342,7 +377,7 @@ and (min-device-width : 320px)
 and (max-device-width : 568px)*/
 and (orientation : portrait) {
 
-    main, #canvasLuik, #gameSpace, #checkboxes{
+    main, #canvasLuik, #gameSpace, #checkboxes, #overzichtAfterSubmit{
         width: 100%;
         margin-right: 12px;
         max-width: 285px;
@@ -367,7 +402,7 @@ and (min-device-width : 375px)
 and (max-device-width : 667px)
 and (orientation : portrait) {
 
-    main, #canvasLuik, #gameSpace, #checkboxes{
+    main, #canvasLuik, #gameSpace, #checkboxes, #overzichtAfterSubmit{
         width: 100%;
         margin-right: 12px;
         max-width: 342px;
