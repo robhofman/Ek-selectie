@@ -37,6 +37,7 @@ $resultA = $db->query($queryA);
     <link rel="stylesheet" href="node_modules/ng-dialog/css/ngDialog-theme-default.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style/HelveticaNeue.dfont">
 
     <title>Wie gaat mee naar Frankrijk</title>
 </head>
