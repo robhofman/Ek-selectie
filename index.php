@@ -55,7 +55,7 @@ $resultA = $db->query($queryA);
     <!--<form action="php/post.php" method="post">-->
     <div id="canvasLuik" class="hidden">
         <div id="luikBackground">
-            <h1>De Bondscoach dankt u!</h1>
+            <h1>De bondscoach dankt u!</h1>
 
 
             <button id="btnShare" class="btnSocial"><i class="fa fa-facebook "></i><p>Share</p></button>
@@ -112,7 +112,7 @@ $resultA = $db->query($queryA);
 
         </div>
     </div>
-    <img src="img/plane.png" alt="treintje" id="trein">
+    <img src="img/plane.png" alt="treintje" class="hidden" id="trein">
     <div id="checkboxes">
         <div id="innerContainerCheckboxes" class="innerContainer">
             <?php
@@ -145,7 +145,6 @@ $resultA = $db->query($queryA);
         <button class="sporzaButton hidden" id="btnWijzig" value="wijzig je team" >Wijzig je team</button>
         <button class="sporzaButton hidden" id="btnHidden" value="wijzig je team" >Wijzig je team</button>
     </div>
-    <button id="btnSelecteer23">selecter 23</button>
 
 </main>
 <script type="text/ng-template" id="testTemplate">

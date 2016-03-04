@@ -6,7 +6,7 @@ input[type='checkbox'] {
 main{
     width: 670px;
     font-family: 'Lato', sans-serif;
-    background-color: #021c46;
+    background-color: rgba(6,69,124,1);
 }
 
 #GK, #V, #M, #A{
@@ -303,6 +303,7 @@ a{
 
 #buttonsDiv{
     margin: 15px;
+    padding-bottom: 20px;
 }
 
 
@@ -360,6 +361,10 @@ a{
         width: 100vw;
     }
 
+    .aantal{
+        margin-right: 15px;
+    }
+
     #luikBackground>h1
     {
         max-width: 90%;
@@ -378,6 +383,7 @@ a{
 
     #btnShare{
         right: 13px;
+        font-size: 11px;
     }
 
 
@@ -415,8 +421,10 @@ a{
     }
 
     #resultatenLijst, #resultatenLijstNietGekozen{
-        width: 97vw;
+        width: auto;
         float: left;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 
     #GK, #V, #M, #A{
@@ -440,7 +448,17 @@ a{
         cursor: auto;
     }
 
+    #Asub>li, #Vsub>li{
+        width: 23%;
+        margin: 1%;
+        cursor: auto;
+    }
 
+    #GKsub>li, #Msub>li{
+        width: 23%;
+        margin: 1%;
+        cursor: auto;
+    }
 
     #resultatenTitelsDiv{
         width: inherit;
@@ -452,17 +470,24 @@ a{
     #resultatenTitelsDiv>h2:nth-child(2){
         margin-left: 15px;
         display: inline-block;
+
     }
 
     #resultatenTitelsDiv>h2:nth-child(1){
-        margin-right: 7px;
+        margin-right: 15px;
         display: inline-block;
-        float: right;
+        /*float: right;*/
+        max-width: 100%;
     }
 
     #GK>li>img:nth-child(2), #V>li>img:nth-child(2), #M>li>img:nth-child(2), #A>li>img:nth-child(2){
         width: 100%;
     }
+
+    #GKsub>li>img, #Vsub>li>img, #Msub>li>img, #Asub>li>img{
+        width: 100%;
+    }
+
     .ngdialog.ngdialog-theme-default .ngdialog-content {
 
         margin: 0 auto !important;
@@ -496,12 +521,11 @@ a{
     }
 
     #resultatenLijst>li{
-        width: 96%;
+        width: 100%;
+
     }
 
-    #resultatenLijstNietGekozen>li{
-        width: 96%;
-    }
+
     #gameSpace h1{
         max-width: 100%;
     }
@@ -511,7 +535,13 @@ a{
     }
 }
 
+/*ipad*/
+@media screen and (device-aspect-ratio: 3/4) {
+    #btnShare{
+        font-size: 10px;
+    }
 
+}
 
 
 
@@ -524,7 +554,7 @@ and (orientation : portrait) {
 
     main, #canvasLuik, #gameSpace, #checkboxes, #overzichtAfterSubmit{
         width: 100%;
-        margin-right: 12px;
+        margin-right: 18px;
         max-width: 285px;
     }
 
@@ -536,6 +566,10 @@ and (orientation : portrait) {
         max-width: 365px !important;
         margin-left: 0 !important;
         height: auto!important;
+    }
+
+    #overzichtAfterSubmit li{
+        max-width: 60px;
     }
 }
 
@@ -549,7 +583,7 @@ and (orientation : portrait) {
 
     main, #canvasLuik, #gameSpace, #checkboxes, #overzichtAfterSubmit{
         width: 100%;
-        margin-right: 12px;
+        margin-right: 18px;
         max-width: 342px;
     }
 
@@ -561,6 +595,9 @@ and (orientation : portrait) {
         max-width: 365px !important;
         margin-left: 0 !important;
         height: auto!important;
+    }
+    #overzichtAfterSubmit li{
+        max-width: 60px;
     }
 
 }

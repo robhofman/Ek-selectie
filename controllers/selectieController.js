@@ -377,6 +377,7 @@
             $("#checkboxes").addClass("hidden");
 
             setTimeout(function(){
+                t.removeClass("hidden");
                 t.animate({
                     left: -700+"px",
                     top: -700+"px",
@@ -461,8 +462,8 @@
                 allListItems[i].addEventListener("click", selectInnerCheckbox);
             }
 
-            var btnSelecteer23 = document.getElementById("btnSelecteer23");
-            btnSelecteer23.addEventListener("click", selecteer23);
+            //var btnSelecteer23 = document.getElementById("btnSelecteer23");
+            //btnSelecteer23.addEventListener("click", selecteer23);
 
             //setTimeout(function(){luikVallen();}, 1000);
 

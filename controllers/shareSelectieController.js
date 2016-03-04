@@ -12,7 +12,10 @@
 
         var getParameterByName = function(name, url){
             {
-                if (!url) url = window.location.href;
+                //if (!url) url = window.location.href;
+                if (!url) url = parent.window.location.href;
+
+                url = decodeURIComponent(url);
                 name = name.replace(/[\[\]]/g, "\\$&");
                 var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
                     results = regex.exec(url);
@@ -24,7 +27,7 @@
 
         var getPlayers = function () {
 
-            for(var i =0; i<23; i++){
+                for(var i =1; i<24; i++){
                 var speler = getParameterByName("s"+i);
                 if(speler)
                 $scope.spelers.push(speler);

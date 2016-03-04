@@ -6,7 +6,9 @@ document.getElementById("jow").onclick = function() {
     FB.ui({
         method: 'feed',
         link: sharelink,
-        caption: "Dit is mijn selectie voor het EK 2016"
+        caption: "Dit is mijn selectie voor het EK 2016",
+        picture: "http;//goudenduivels.sporzalb.be/selectiemaker/img/plane.png"
+
 
     }, function (response) {
     });

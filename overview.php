@@ -16,7 +16,7 @@
             </div>
             <a href="http://sporza.be/cm/sporza/extra/1.2582529">
                 <div class="sporzaButton overviewButton">
-                    <p>speel zelf</p>
+                    <p>Speel zelf!</p>
                 </div>
             </a>
         </div>
@@ -26,5 +26,6 @@
     <script src="node_modules/ng-dialog/js/ngDialog.js"></script>
     <script src="app.js"></script>
     <script src="controllers/shareSelectieController.js"></script>
+    <script src="controllers/selectieController.js"></script>
 </body>
 </html>
