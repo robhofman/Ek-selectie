@@ -58,7 +58,6 @@ $resultA = $db->query($queryA);
 
 
             <button id="btnShare" class="btnSocial"><i class="fa fa-facebook "></i><p>Share</p></button>
-            <button id="btnTwitterShare">share op twitter</button>
 
 
             <div id="rootTwitter"></div>
@@ -167,9 +166,7 @@ $resultA = $db->query($queryA);
 <script src="controllers/selectieController.js"></script>
 <script src="js/twittershare.js"></script>
 
-<button id="jow">
-    share to facebook
-</button>
+
 <script type="text/javascript">
     //    document.getElementById("jow").onclick = function() {
     //        alert("I'm clicked");

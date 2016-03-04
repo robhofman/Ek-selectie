@@ -1,24 +1,5 @@
 
-
-document.getElementById("btnTwitterShare").onclick = function() {
-	var twitterUrl = "https://twitter.com/share";
-	var queryString = shareQueryString;
-	var deURL = twitterUrl + encodeURI("?http://goudenduivels.sporzalb.be/selectiemaker/overview.php"+encodeURIComponent("?"+shareQueryString));
-	var result = encodeURI(deURL);
-	openWindow(deURL);
-};
-
-
-
-function openWindow(url) { 
-  window.open(
-    url,
-    'feedDialog',
-    'toolbar=0,status=0,width=626,height=436'
-  ); 
-}
-
-function twitterInit(){
+$(document).ready(function(){
     window.twttr = (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0],
             t = window.twttr || {};
@@ -36,16 +17,40 @@ function twitterInit(){
         return t;
     }(document, "script", "twitter-wjs"));
 
+});
+
+/*
+document.getElementById("btnTwitterShare").onclick = function() {
+	var twitterUrl = "https://twitter.com/share";
+	var queryString = shareQueryString;
+	var deURL = twitterUrl + encodeURI("?http://goudenduivels.sporzalb.be/selectiemaker/overview.php"+encodeURIComponent("?"+shareQueryString));
+	var result = encodeURI(deURL);
+	openWindow(deURL);
+};
+
+
+
+function openWindow(url) { 
+  window.open(
+    url,
+    'feedDialog',
+    'toolbar=0,status=0,width=626,height=436'
+  ); 
+}*/
+
+function twitterInit(){
+
     twttr.ready(
-        setTimeout(function(){
+        //setTimeout(function(){
             twttr.widgets.createShareButton(
                 "http://goudenduivels.sporzalb.be/selectiemaker/overview.php?"+encodeURIComponent(shareQueryString),
                 document.getElementById('rootTwitter'),
                 {
-                    text: 'Dit is mijn selectie'
+                    text: 'Dit is mijn selectie',
+                    size: "large"
                 }
             )
-        }, 500)
+        // }, 500)
 
 
     );

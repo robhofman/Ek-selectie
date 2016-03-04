@@ -36,7 +36,8 @@ main{
     outline: 0;
     border: none;
     color: white;
-    width: 74px;
+    width: 78px;
+    height: 26px;
     border-radius: 3px;
     font-size: .9em;
 }
@@ -299,9 +300,7 @@ a{
     margin: 15px;
 }
 
-.gekozen{
-    font-weight: bold;
-}
+
 
 
 
@@ -412,6 +411,7 @@ a{
 
     #resultatenLijst, #resultatenLijstNietGekozen{
         width: 97vw;
+        float: left;
     }
 
     #GK, #V, #M, #A{
