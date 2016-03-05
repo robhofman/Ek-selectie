@@ -14,7 +14,6 @@ $(document).ready(function(){
 		sharelink = "http://goudenduivels.sporzalb.be/selectiemaker/overview.php?";
 		sharelink = sharelink+"s1="+selected[0]+"&s2="+selected[1]+"&s3="+selected[2]+"&s4="+selected[3]+"&s5="+selected[4]+"&s6="+selected[5]+"&s7="+selected[6]+"&s8="+selected[7]+"&s9="+selected[8]+"&s10="+selected[9]+"&s11="+selected[10]+"&s12="+selected[11]+"&s13="+selected[12]+"&s14="+selected[13]+"&s15="+selected[14]+"&s16="+selected[15]+"&s17="+selected[16]+"&s18="+selected[17]+"&s19="+selected[18]+"&s20="+selected[19]+"&s21="+selected[20]+"&s22="+selected[21]+"&s23="+selected[22];
 		shareQueryString = "s1="+selected[0]+"&s2="+selected[1]+"&s3="+selected[2]+"&s4="+selected[3]+"&s5="+selected[4]+"&s6="+selected[5]+"&s7="+selected[6]+"&s8="+selected[7]+"&s9="+selected[8]+"&s10="+selected[9]+"&s11="+selected[10]+"&s12="+selected[11]+"&s13="+selected[12]+"&s14="+selected[13]+"&s15="+selected[14]+"&s16="+selected[15]+"&s17="+selected[16]+"&s18="+selected[17]+"&s19="+selected[18]+"&s20="+selected[19]+"&s21="+selected[20]+"&s22="+selected[21]+"&s23="+selected[22];
-		console.log(sharelink);
         //document.getElementById("rootTwitter").innerHTML()
 		////document.getElementById("btnBewaarPopup").onclick = function() {
 		//	//alert("I'm clicked");

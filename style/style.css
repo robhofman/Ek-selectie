@@ -6,7 +6,11 @@ input[type='checkbox'] {
 main{
     width: 670px;
     font-family: 'Lato', sans-serif;
-    background-color: rgba(6,69,124,1);
+    background-color: #021c46;
+}
+
+body{
+    background-color: #021c46;
 }
 
 #GK, #V, #M, #A{
@@ -21,6 +25,7 @@ main{
     overflow: hidden;
     background-image: url("../img/plane_rotated.png");
     background-position: right;
+    margin-top: -7px;
 }
 
 
@@ -343,7 +348,7 @@ a{
     border-radius: 5px;
     outline: 4px solid red;
     box-shadow: 0 0 0 2pt red;
-    background: red; /* For browsers that do not support gradients */
+    background: #06457c; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(top,rgba(2,28,70,0),rgba(7,76,133,1)); /*Safari 5.1-6*/
     background: -o-linear-gradient(bottom,rgba(2,28,70,0),rgba(7,76,133,1)); /*Opera 11.1-12*/
     background: -moz-linear-gradient(bottom,rgba(2,28,70,0),rgba(7,76,133,1)); /*Fx 3.6-15*/

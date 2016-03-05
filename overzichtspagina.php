@@ -9,13 +9,17 @@ $result2 = mysqli_query($mysqli, 'SELECT id, totaal FROM selectiemaker_inzending
 $totaal = 0;
 
 while($row2 = mysqli_fetch_assoc($result2)){
-    echo "Totaal aantal inzendingen: " . $row2['totaal'];
+    echo "<h1>Totaal aantal inzendingen: " . $row2['totaal']."</h1>";
     $totaal = $row2['totaal'];
 }
 
 $result1 = mysqli_query($mysqli, 'SELECT id, naam, aantal, positie FROM selectiemaker_spelers');
-    echo "<table>";
-
+?>
+    <table border="1">
+    <th>Naam</th>
+    <th>Aantal</th>
+    <th>Percentage</th>
+    <?php
 while($row1 = mysqli_fetch_assoc($result1)){
 //    $aantalVanSpeler = $row1['aantal'];
 //
@@ -36,6 +40,7 @@ while($row1 = mysqli_fetch_assoc($result1)){
         <tr>
             <td><?php echo $row1['naam'] ?></td>
             <td><?php  echo $row1['aantal'] ?></td>
+            <td><?php echo round($percentage)?></td>
         </tr>
     <?php
     //$perc = $row1['aantal']/$row2['totaal'];
