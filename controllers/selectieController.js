@@ -435,6 +435,8 @@
             }
         };
 
+
+
         var selecteer23 = function () {
             var allListItems = document.getElementsByClassName('speler');
             for (var i=0;  i<23; i++) {

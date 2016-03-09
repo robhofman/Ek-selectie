@@ -157,6 +157,7 @@ $resultA = $db->query($queryA);
 </script>
 <script src="lib/jquery-ui.js"></script>
 <script src="js/disableDoubleTap.js"></script>
+
 <script src="lib/angular.js"></script>
 <script src="node_modules/ng-dialog/js/ngDialog.js"></script>
 <script src="js/jquery.scrollTo.js"></script>
